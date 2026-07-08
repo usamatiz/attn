@@ -1468,6 +1468,8 @@ textarea {
     display: flex;
     margin-left: auto;
   }
+  
+
 
   .nav-links {
     display: none;
@@ -1640,6 +1642,10 @@ textarea {
     text-align: center;
     justify-items: center;
   }
+  .dark-section {
+  background:
+    none;
+}
 }
 
 /* ---- small phone ---- */
@@ -1651,6 +1657,10 @@ textarea {
   .brand {
     font-size: 32px;
   }
+  .dark-section {
+  background:
+    none;
+}
 
   .nav-cta {
     margin-left: 12px;
