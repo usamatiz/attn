@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600&family=Archivo+Black&family=Permanent+Marker&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#111}</style>
+</helmet>
+<div style="width:100vw;height:100vh;overflow:hidden">
+<x-import component-from-global-scope="BuildVideo" from="./animations.jsx ./build-video.jsx" hint-size="100%,100%" style="width:100%;height:100%"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // Stage mounts async (x-import); it can measure too early and lock a tiny
+    // scale. Poll until the stage svg exists at a plausible size, nudging it
+    // to re-measure each tick; then settle with two final nudges.
+    const t0 = Date.now();
+    this._fixer = setInterval(() => {
+      const svg = document.querySelector('svg');
+      const ok = svg && svg.getBoundingClientRect().width > window.innerWidth * 0.2;
+      window.dispatchEvent(new Event('resize'));
+      if (ok || Date.now() - t0 > 15000) {
+        clearInterval(this._fixer);
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+        document.fonts.ready.then(() => window.dispatchEvent(new Event('resize')));
+      }
+    }, 150);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

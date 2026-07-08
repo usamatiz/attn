@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Archivo+Black&family=Permanent+Marker&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0f0e12}input,select,textarea{font-family:Archivo,sans-serif}::placeholder{color:#8a8578}</style>
+</helmet>
+<div style="font-family:Archivo,sans-serif;color:#ece7da;background:#0f0e12">
+
+  <!-- NAV -->
+  <div data-screen-label="Nav" style="display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:20px 24px">
+    <div style="font-family:'Archivo Black',sans-serif;font-size:26px;letter-spacing:-0.02em">ATTN<span style="color:#fe6700">!</span></div>
+    <div style="display:flex;gap:28px;align-items:center;font-size:12px;font-weight:600;letter-spacing:2px">
+      <span>ABOUT</span><span>SERVICES</span><span>RESULTS</span><span>RESOURCES</span>
+      <span style="background:#fe6700;color:#fff;padding:10px 18px;border-radius:4px;font-size:11.5px;letter-spacing:1.5px">BOOK STRATEGY CALL</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div data-screen-label="Hero" style="max-width:1140px;margin:0 auto;padding:28px 24px 56px;display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:Anton,sans-serif;font-style:italic;font-size:64px;line-height:1.0;letter-spacing:.5px">BACK<br>TO THE <span style="color:#fe6700">FUTURE</span></div>
+      <div style="font-family:Anton,sans-serif;font-style:italic;font-size:26px;letter-spacing:1px">YOUR BUSINESS. OUR MISSION.</div>
+      <div style="position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(236,231,218,.14)">
+        <canvas id="hero-cv" width="1120" height="620" style="width:100%;display:block"></canvas>
+        <div style="position:absolute;left:50%;top:44%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(15,14,18,.55);border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center">
+          <div style="border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px"></div>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:8px 14px;background:rgba(10,9,12,.72);font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(236,231,218,.85)">
+          <span>▶</span><span>0:00 / 0:58</span>
+          <div style="flex:1;height:3px;background:rgba(255,255,255,.22);border-radius:2px"><div style="width:6%;height:100%;background:#fe6700;border-radius:2px"></div></div>
+          <span>🔊</span><span>⛶</span>
+        </div>
+      </div>
+      <div style="font-size:15.5px;line-height:1.6;color:rgba(236,231,218,.85)">We blend data, creativity and cutting-edge strategy<br>to take your brand from where it is,<br>to <span style="color:#fe6700;font-weight:700">where it's going.</span></div>
+    </div>
+    <div style="border:1px solid rgba(236,231,218,.18);border-radius:10px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;background:#131218">
+      <div style="font-family:Anton,sans-serif;font-size:24px;letter-spacing:.5px">BOOK YOUR <span style="color:#fe6700">FREE</span> STRATEGY CALL</div>
+      <div style="font-size:13.5px;color:rgba(236,231,218,.7);margin-top:-6px">Let's build what's next.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <input placeholder="Full Name" style="background:#1b1a21;border:1px solid rgba(236,231,218,.2);border-radius:5px;padding:12px;color:#ece7da;font-size:13px">
+        <input placeholder="Email Address" style="background:#1b1a21;border:1px solid rgba(236,231,218,.2);border-radius:5px;padding:12px;color:#ece7da;font-size:13px">
+      </div>
+      <input placeholder="Phone Number" style="background:#1b1a21;border:1px solid rgba(236,231,218,.2);border-radius:5px;padding:12px;color:#ece7da;font-size:13px">
+      <select style="background:#1b1a21;border:1px solid rgba(236,231,218,.2);border-radius:5px;padding:12px;color:#8a8578;font-size:13px"><option>Monthly Revenue</option><option>&lt; $10k</option><option>$10k – $50k</option><option>$50k – $200k</option><option>$200k+</option></select>
+      <textarea placeholder="What are you looking to achieve?" rows="3" style="background:#1b1a21;border:1px solid rgba(236,231,218,.2);border-radius:5px;padding:12px;color:#ece7da;font-size:13px;resize:none"></textarea>
+      <div style="background:#fe6700;color:#fff;text-align:center;padding:14px;border-radius:5px;font-weight:700;font-size:14px;letter-spacing:1.5px">BOOK MY FREE CALL</div>
+      <div style="text-align:center;font-size:11.5px;color:rgba(236,231,218,.55)">🔒 We respect your privacy. No spam. Ever.</div>
+    </div>
+  </div>
+
+  <!-- FEATURED IN -->
+  <div data-screen-label="Featured in" style="background:#f0ede6;color:#202020">
+    <div style="max-width:1140px;margin:0 auto;padding:30px 24px;display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="flex:1;height:1px;background:rgba(32,32,32,.2)"></div>
+        <div style="font-weight:700;font-size:13px;letter-spacing:3px">AS FEATURED IN</div>
+        <div style="flex:1;height:1px;background:rgba(32,32,32,.2)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:18px;opacity:.55">
+        <sc-for list="{{ pubs }}" as="p" hint-placeholder-count="6">
+          <div style="text-align:center;font-weight:700;font-size:13px;letter-spacing:1.5px;line-height:1.25">{{ p.a }}<br><span style="font-weight:500;font-size:10.5px;letter-spacing:2.5px">{{ p.b }}</span></div>
+        </sc-for>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(32,32,32,.45);text-align:center">PLACEHOLDER MARKS — real publications pending confirmation (brief §8)</div>
+    </div>
+  </div>
+
+  <!-- STRUGGLE -->
+  <div data-screen-label="Struggle" style="background:#0f0e12">
+    <div style="max-width:1140px;margin:0 auto;padding:52px 24px;display:flex;flex-direction:column;gap:36px">
+      <div style="font-family:Anton,sans-serif;font-size:34px;text-align:center;letter-spacing:.5px">AS A BUSINESS OWNER,<br>DO YOU <span style="color:#fe6700">STRUGGLE</span> WITH...</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+        <sc-for list="{{ pains }}" as="pain" hint-placeholder-count="5">
+          <div style="padding:0 18px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;border-right:1px solid rgba(236,231,218,.12)">
+            <div style="width:52px;height:52px;border:2px solid #fe6700;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:18px;color:#F7A84D">{{ pain.glyph }}</div>
+            <div style="font-weight:700;font-size:13px;letter-spacing:1px">{{ pain.title }}</div>
+            <div style="font-size:12px;line-height:1.5;color:rgba(236,231,218,.65)">{{ pain.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="text-align:center"><span style="font-family:Anton,sans-serif;font-size:22px;border-bottom:4px solid #fe6700;padding-bottom:4px">You're not alone.</span></div>
+    </div>
+  </div>
+
+  <!-- PROOF -->
+  <div data-screen-label="Proof" style="background:#f0ede6;color:#202020">
+    <div style="max-width:1140px;margin:0 auto;padding:52px 24px;display:flex;flex-direction:column;gap:10px;text-align:center">
+      <div style="font-family:Anton,sans-serif;font-size:24px;letter-spacing:.5px">YOU'RE NOT ALONE...</div>
+      <div style="font-family:Anton,sans-serif;font-size:24px;letter-spacing:.5px">WE HAVE HELPED OVER 350+ BUSINESSES<br>TO SCALE AND GENERATE</div>
+      <div style="font-family:Anton,sans-serif;font-size:96px;color:#fe6700;line-height:1.05">$250M+</div>
+      <div style="font-weight:700;font-size:15px;letter-spacing:2px">IN COMBINED REVENUE FOR OUR CLIENTS</div>
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:26px;opacity:.6">
+        <sc-for list="{{ brands }}" as="b" hint-placeholder-count="8">
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div style="width:26px;height:26px;border:1.5px solid #202020;transform:rotate(45deg)"></div>
+            <div style="font-weight:700;font-size:10px;letter-spacing:1.5px">{{ b }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(32,32,32,.45)">CLIENT MARKS PLACEHOLDER — permissions required · figures pending verification</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div data-screen-label="Services" style="background:#0f0e12">
+    <div style="max-width:1140px;margin:0 auto;padding:52px 24px;display:flex;flex-direction:column;gap:30px">
+      <div style="font-family:Anton,sans-serif;font-size:34px;text-align:center;letter-spacing:.5px">HERE'S HOW WE CAN <span style="color:#fe6700">HELP YOU</span></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+          <div style="border:1px solid rgba(236,231,218,.16);border-radius:8px;padding:24px 16px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center">
+            <div style="width:46px;height:46px;border:2px solid #fe6700;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:16px;color:#F7A84D">{{ s.glyph }}</div>
+            <div style="font-weight:700;font-size:13px;letter-spacing:1px">{{ s.title }}</div>
+            <div style="font-size:12px;line-height:1.5;color:rgba(236,231,218,.65)">{{ s.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEAD MAGNET -->
+  <div data-screen-label="Lead magnet" style="background:#f0ede6;color:#202020">
+    <div style="max-width:1140px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:270px minmax(0,1fr) minmax(140px,190px);gap:28px;align-items:center">
+      <div style="justify-self:center;transform:rotate(-4deg);width:230px;height:316px;background:#14161c;border-radius:4px;box-shadow:14px 16px 24px rgba(0,0,0,.28);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:8px;border:2px solid #fe6700"></div>
+        <div style="position:absolute;left:0;right:0;top:30px;text-align:center;font-family:'Archivo Black',sans-serif;font-size:20px;color:#ece7da">ATTN<span style="color:#fe6700">!</span></div>
+        <div style="position:absolute;left:0;right:0;top:58px;text-align:center;font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:2px;color:rgba(236,231,218,.55)">FIELD MANUAL</div>
+        <div style="position:absolute;left:22px;right:22px;top:104px;font-family:Anton,sans-serif;font-size:30px;line-height:1.05;color:#ece7da;text-transform:uppercase">Growth Strategy Blueprint</div>
+        <div style="position:absolute;left:22px;bottom:44px;font-family:'Share Tech Mono',monospace;font-size:7px;letter-spacing:1.5px;color:#F7A84D">DOC 88 · REV A</div>
+        <canvas id="bp-cv" width="230" height="316" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="color:#fe6700;font-weight:700;font-size:13px;letter-spacing:2px">FREE LEAD MAGNET DOWNLOAD</div>
+        <div style="font-family:Anton,sans-serif;font-size:36px;letter-spacing:.5px">STILL NOT SURE,<br>START HERE FIRST!</div>
+        <div style="font-size:15px;line-height:1.6;color:rgba(32,32,32,.75);max-width:460px">Get our Growth Strategy Blueprint and discover the exact framework we use to help businesses scale.</div>
+        <div style="display:flex;gap:10px;max-width:480px">
+          <input placeholder="Enter your email address" style="flex:1;background:#fff;border:1px solid rgba(32,32,32,.3);border-radius:5px;padding:13px;font-size:13px;color:#202020">
+          <div style="background:#fe6700;color:#fff;padding:13px 22px;border-radius:5px;font-weight:700;font-size:13px;letter-spacing:1px;white-space:nowrap">DOWNLOAD FREE GUIDE</div>
+        </div>
+        <div style="font-size:11.5px;color:rgba(32,32,32,.55)">🔒 We respect your privacy. No spam. Ever.</div>
+      </div>
+      <sc-if value="{{ showAnnotation }}" hint-placeholder-val="{{ true }}">
+        <div style="font-family:'Permanent Marker',cursive;font-size:18px;line-height:1.35;color:#fe6700;transform:rotate(-3deg)">A step-by-step blueprint to grow with clarity and confidence. <span style="display:inline-block;transform:rotate(20deg)">↙</span></div>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div data-screen-label="Testimonials" style="background:#0f0e12">
+    <div style="max-width:1140px;margin:0 auto;padding:52px 24px;display:flex;flex-direction:column;gap:30px">
+      <div style="font-family:Anton,sans-serif;font-size:34px;text-align:center;letter-spacing:.5px">WHAT OUR CLIENTS SAY</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
+          <div style="border:1px solid rgba(236,231,218,.16);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:12px">
+            <div style="position:relative;height:170px;border-radius:5px;background:linear-gradient(160deg,#1c1a22,#131218);display:flex;align-items:center;justify-content:center">
+              <div style="position:absolute;top:8px;left:8px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(236,231,218,.45);border:1px dashed rgba(236,231,218,.3);padding:2px 6px">CLIENT VIDEO — TO BE SUPPLIED</div>
+              <div style="width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center"><div style="border-left:16px solid rgba(255,255,255,.85);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px"></div></div>
+            </div>
+            <div style="color:#fe6700;letter-spacing:4px;text-align:center;font-size:14px">★★★★★</div>
+            <div style="font-size:12.5px;line-height:1.55;color:rgba(236,231,218,.75);text-align:center;font-style:italic">"{{ tm.quote }}"</div>
+            <div style="color:#fe6700;font-weight:700;font-size:11.5px;letter-spacing:1.5px;text-align:center">— {{ tm.who }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <div style="width:9px;height:9px;border-radius:50%;background:#fe6700"></div>
+        <div style="width:9px;height:9px;border-radius:50%;background:rgba(236,231,218,.25)"></div>
+        <div style="width:9px;height:9px;border-radius:50%;background:rgba(236,231,218,.25)"></div>
+        <div style="width:9px;height:9px;border-radius:50%;background:rgba(236,231,218,.25)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <div data-screen-label="Bio" style="background:#f0ede6;color:#202020">
+    <div style="max-width:1140px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center">
+      <div style="justify-self:center;transform:rotate(-2.5deg);background:#fbf9f4;padding:12px 12px 40px;box-shadow:6px 8px 18px rgba(0,0,0,.22);position:relative">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(2deg);width:90px;height:26px;background:rgba(226,196,148,.6)"></div>
+        <div style="width:250px;height:280px;background:linear-gradient(150deg,#8d8d8d,#666);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+          <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#2c2c2c;letter-spacing:1px">SLOT 2 — WILL PORTRAIT</div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:9.5px;color:rgba(44,44,44,.7)">B&amp;W photo to be supplied</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Anton,sans-serif;font-size:36px;letter-spacing:.5px">WHO IS <span style="color:#fe6700">WILL GILES</span>?</div>
+        <div style="font-size:15px;line-height:1.6;color:rgba(32,32,32,.75);max-width:520px">Will Giles is a growth marketing strategist helping brands turn bold ideas into measurable results.</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px">
+          <sc-for list="{{ bioPoints }}" as="bp" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="width:34px;height:34px;border:2px solid #fe6700;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:13px;color:#c65200">{{ bp.glyph }}</div>
+              <div style="font-weight:700;font-size:12px;letter-spacing:.5px">{{ bp.title }}</div>
+              <div style="font-size:11.5px;line-height:1.45;color:rgba(32,32,32,.65)">{{ bp.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:20px;align-items:center;margin-top:8px">
+          <div style="background:#fe6700;color:#fff;padding:13px 24px;border-radius:5px;font-weight:700;font-size:13px;letter-spacing:1.5px">BOOK MY FREE CALL</div>
+          <div style="font-style:italic;font-weight:600;color:#fe6700;font-size:14px">Let's build what's next ⟶</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div data-screen-label="Footer" style="background:#0b0a0e;border-top:1px solid rgba(236,231,218,.1)">
+    <div style="max-width:1140px;margin:0 auto;padding:22px 24px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:-0.02em">ATTN<span style="color:#fe6700">!</span></div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:1.5px;color:rgba(236,231,218,.5);line-height:1.4">GROWTH MARKETING<br>FOR THE FUTURE</div>
+      </div>
+      <div style="display:flex;gap:14px;font-family:'Share Tech Mono',monospace;font-size:13px;color:rgba(236,231,218,.6)">
+        <span>ƒ</span><span>◎</span><span>in</span><span>▶</span>
+      </div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:rgba(236,231,218,.5);text-align:right;line-height:1.5">WHERE ANALOG ROOTS<br>MEET DIGITAL GROWTH.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLightning&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showAnnotation&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Lead magnet&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showAnnotation: this.props.showAnnotation ?? true,
+      pubs: [
+        { a: 'BUSINESS', b: 'WEEKLY' }, { a: 'MARKETING', b: 'INSIDER' }, { a: 'ENTREPRENEUR', b: 'MAGAZINE' },
+        { a: 'DIGITAL', b: 'TODAY' }, { a: 'CEO', b: 'WEEKLY' }, { a: 'BRAND', b: 'REPORT' },
+      ],
+      pains: [
+        { glyph: '◷', title: 'LACK OF TIME', sub: 'Not enough hours in the day to focus on growth.' },
+        { glyph: '◌◌', title: 'INCONSISTENT LEADS', sub: 'Unpredictable lead flow that makes planning impossible.' },
+        { glyph: '◈', title: 'LOW TRUST & VISIBILITY', sub: 'Struggling to stand out and build trust in a crowded market.' },
+        { glyph: '▂▅', title: 'POOR ROI', sub: 'Marketing spend without measurable results or return.' },
+        { glyph: '?', title: 'UNCLEAR STRATEGY', sub: 'No clear plan or direction to scale with confidence and consistency.' },
+      ],
+      brands: ['BRAND ONE','BRAND TWO','BRAND THREE','BRAND FOUR','BRAND FIVE','BRAND SIX','BRAND SEVEN','BRAND EIGHT'],
+      services: [
+        { glyph: '◎', title: 'PAID MEDIA', sub: 'Meta Ads, Google Ads & YouTube to drive quality traffic.' },
+        { glyph: '♥', title: 'SOCIAL MEDIA', sub: 'Content, community & brand storytelling that builds trust.' },
+        { glyph: '▣', title: 'WEBSITES & LANDING PAGES', sub: 'Conversion-focused design & development that turns visitors into leads.' },
+        { glyph: '✉', title: 'EMAIL MARKETING', sub: 'Automation, EDMs & nurturing flows that convert.' },
+        { glyph: '⚙', title: 'AI & AUTOMATION', sub: 'Smarter systems, less busywork. More growth.' },
+      ],
+      testimonials: [
+        { quote: 'Will and his team transformed our marketing. In 6 months, we saw our leads triple and revenue scale beyond what we thought was possible.', who: 'JAMES, CO-FOUNDER' },
+        { quote: 'Their strategy, execution and attention to detail is next level. We finally have a system that consistently drives growth.', who: 'SARAH, CEO' },
+        { quote: 'The best investment we\u2019ve made. Clear strategy, constant communication and massive results.', who: 'MATT, FOUNDER' },
+      ],
+      bioPoints: [
+        { glyph: '15', title: '15+ YEARS EXPERIENCE', sub: 'Growth marketing across multiple industries' },
+        { glyph: '◎', title: 'STRATEGY FIRST', sub: 'Data-led, human-focused, results obsessed' },
+        { glyph: '◈', title: 'REAL WORLD EXPERIENCE', sub: 'From startup hustle to global brands' },
+        { glyph: '∞', title: 'PARTNER, NOT SUPPLIER', sub: 'We grow together, long term' },
+      ],
+    };
+  }
+  componentDidMount() { document.fonts.ready.then(() => this.drawAll()); }
+  componentDidUpdate() { this.drawAll(); }
+  rng(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  grain(ctx, w, h, amt) {
+    const c = document.createElement('canvas'); c.width = w >> 1; c.height = h >> 1;
+    const x = c.getContext('2d'); const d = x.createImageData(c.width, c.height);
+    for (let i = 0; i < d.data.length; i += 4) { const v = Math.random() * 255; d.data[i] = d.data[i+1] = d.data[i+2] = v; d.data[i+3] = 255; }
+    x.putImageData(d, 0, 0);
+    ctx.save(); ctx.globalAlpha = amt; ctx.globalCompositeOperation = 'overlay'; ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(c, 0, 0, w, h); ctx.restore();
+  }
+  vignette(ctx, w, h, amt) {
+    const g = ctx.createRadialGradient(w/2, h/2, Math.min(w,h)*0.35, w/2, h/2, Math.max(w,h)*0.72);
+    g.addColorStop(0, 'rgba(5,5,8,0)'); g.addColorStop(1, 'rgba(5,5,8,' + amt + ')');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  }
+  drawAll() { this.drawHero(); this.drawBlueprintGrain(); }
+
+  drawBlueprintGrain() {
+    const cv = document.getElementById('bp-cv'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 230, h = 316;
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(130,148,178,0.15)'; ctx.lineWidth = 0.8;
+    const y0 = h * 0.68;
+    for (let x = 16; x < w - 16; x += 14) { ctx.beginPath(); ctx.moveTo(x, y0); ctx.lineTo(x, h - 16); ctx.stroke(); }
+    for (let y = y0; y < h - 16; y += 14) { ctx.beginPath(); ctx.moveTo(16, y); ctx.lineTo(w - 16, y); ctx.stroke(); }
+    ctx.strokeStyle = 'rgba(130,148,178,0.3)';
+    ctx.beginPath(); ctx.arc(w * 0.35, h * 0.83, 26, 0, 7); ctx.stroke();
+    ctx.strokeRect(w * 0.58, h * 0.76, 58, 40);
+    this.vignette(ctx, w, h, 0.3);
+    this.grain(ctx, w, h, 0.08);
+  }
+
+  drawHero() {
+    const cv = document.getElementById('hero-cv'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 1120, h = 620; const R = this.rng(88);
+    const lightning = this.props.heroLightning ?? true;
+    ctx.clearRect(0, 0, w, h);
+    const hz = h * 0.58;
+    let g = ctx.createLinearGradient(0, 0, 0, hz);
+    g.addColorStop(0, '#0c1124'); g.addColorStop(0.45, '#1e2a4e'); g.addColorStop(0.8, '#333a5c'); g.addColorStop(1, '#2e2840');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz + 2);
+    for (let i = 0; i < 230; i++) {
+      const cx = R() * w, cy = R() * hz, r = 30 + R() * 140, t = R();
+      const col = t < 0.4 ? '20,30,60' : (t < 0.75 ? '96,112,158' : '70,58,102');
+      const cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      cg.addColorStop(0, 'rgba(' + col + ',' + (0.07 + R() * 0.15) + ')'); cg.addColorStop(1, 'rgba(' + col + ',0)');
+      ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(cx, cy, r * 1.5, r * 0.65, 0, 0, 7); ctx.fill();
+    }
+    g = ctx.createRadialGradient(w * 0.5, hz - 4, 0, w * 0.5, hz - 4, w * 0.30);
+    g.addColorStop(0, 'rgba(215,112,38,0.45)'); g.addColorStop(1, 'rgba(215,112,38,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz + 4);
+    const strokePts = (pts, lw, style, blur) => {
+      ctx.save(); ctx.strokeStyle = style; ctx.lineWidth = lw; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if (blur) { ctx.shadowColor = 'rgba(255,235,205,0.9)'; ctx.shadowBlur = blur; }
+      ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); ctx.restore();
+    };
+    if (lightning) {
+      const bolt = (x0, endY, big) => {
+        const pts = [[x0, -10]]; let bx = x0, by = -10;
+        while (by < endY) { bx += (R() - 0.5) * 52; by += 22 + R() * 30; pts.push([bx, by]); }
+        const ig = ctx.createRadialGradient(x0, h * 0.1, 0, x0, h * 0.1, w * 0.3);
+        ig.addColorStop(0, 'rgba(225,222,215,' + (big ? 0.20 : 0.10) + ')'); ig.addColorStop(1, 'rgba(225,222,215,0)');
+        ctx.fillStyle = ig; ctx.fillRect(0, 0, w, hz);
+        strokePts(pts, big ? 13 : 8, 'rgba(255,240,218,0.16)', 40);
+        strokePts(pts, big ? 3.6 : 2.4, '#fff4e2', 22);
+        strokePts(pts, big ? 1.4 : 1, '#ffffff', 0);
+      };
+      bolt(w * 0.85, h * 0.44, true);
+      bolt(w * 0.13, h * 0.34, false);
+    }
+    g = ctx.createLinearGradient(0, hz, 0, h);
+    g.addColorStop(0, '#161a26'); g.addColorStop(0.3, '#0f0e13'); g.addColorStop(1, '#0d0a08');
+    ctx.fillStyle = g; ctx.fillRect(0, hz, w, h - hz);
+    ctx.fillStyle = 'rgba(96,114,152,0.10)'; ctx.fillRect(0, hz, w, 26);
+    const k = 1.1, CW = 380 * k, cx0 = w * 0.5, gy = h * 0.76;
+    g = ctx.createRadialGradient(cx0, gy - 8, 0, cx0, gy - 8, CW * 0.75);
+    g.addColorStop(0, 'rgba(254,103,0,0.42)'); g.addColorStop(0.5, 'rgba(210,85,10,0.14)'); g.addColorStop(1, 'rgba(210,85,10,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, hz - 30, w, h);
+    const trail = (sx, sy, ex, ey, mx, my, seed) => {
+      const r2 = this.rng(seed);
+      const path = () => { ctx.beginPath(); ctx.moveTo(sx, sy); ctx.quadraticCurveTo(mx, my, ex, ey); };
+      ctx.save(); ctx.lineCap = 'round';
+      ctx.shadowColor = 'rgba(254,115,10,0.85)'; ctx.shadowBlur = 30;
+      ctx.strokeStyle = 'rgba(254,103,0,0.35)'; ctx.lineWidth = 30; path(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,150,50,0.8)'; ctx.lineWidth = 13; path(); ctx.stroke();
+      ctx.shadowBlur = 12; ctx.strokeStyle = '#ffe6ba'; ctx.lineWidth = 4.5; path(); ctx.stroke();
+      ctx.shadowBlur = 0; ctx.strokeStyle = '#fff8ea'; ctx.lineWidth = 1.6; path(); ctx.stroke();
+      for (let i = 0; i < 42; i++) {
+        const t = r2(); const px = (1-t)*(1-t)*sx + 2*(1-t)*t*mx + t*t*ex + (r2()-0.5)*30;
+        const py = (1-t)*(1-t)*sy + 2*(1-t)*t*my + t*t*ey + (r2()-0.5)*20;
+        ctx.fillStyle = 'rgba(255,' + (165 + (r2()*70|0)) + ',85,' + (0.25 + r2()*0.55) + ')';
+        ctx.beginPath(); ctx.arc(px, py, 0.8 + r2() * 2.2, 0, 7); ctx.fill();
+      }
+      ctx.restore();
+    };
+    trail(cx0 - CW*0.24, gy - 4, w*0.02, h + 70, cx0 - CW*0.72, gy + 66, 3);
+    trail(cx0 + CW*0.24, gy - 4, w*0.98, h + 70, cx0 + CW*0.72, gy + 66, 9);
+    ctx.save(); ctx.globalAlpha = 0.13;
+    for (let i = 0; i < 36; i++) {
+      const rx = cx0 - CW*0.55 + R() * CW * 1.1, rl = 14 + R() * 70;
+      const rg = ctx.createLinearGradient(0, gy + 6, 0, gy + 6 + rl);
+      rg.addColorStop(0, 'rgba(254,130,30,0.55)'); rg.addColorStop(1, 'rgba(254,130,30,0)');
+      ctx.fillStyle = rg; ctx.fillRect(rx, gy + 6, 2 + R() * 3, rl);
+    }
+    ctx.restore();
+    g = ctx.createRadialGradient(cx0, gy + 2, 0, cx0, gy + 2, CW * 0.6);
+    g.addColorStop(0, 'rgba(0,0,0,0.6)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(cx0, gy + 4, CW * 0.58, 18, 0, 0, 7); ctx.fill();
+    ctx.save(); ctx.translate(cx0 - CW / 2, gy); ctx.scale(k, k);
+    ctx.fillStyle = '#0a0a0c';
+    ctx.fillRect(34, -12, 64, 13); ctx.fillRect(282, -12, 64, 13);
+    const P = [[0,-6],[6,-46],[14,-70],[20,-80],[60,-86],[118,-166],[262,-166],[320,-86],[360,-80],[366,-70],[374,-46],[380,-6]];
+    ctx.beginPath(); P.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath();
+    let bg = ctx.createLinearGradient(0, -170, 0, 0);
+    bg.addColorStop(0, '#8b93a3'); bg.addColorStop(0.5, '#565d6b'); bg.addColorStop(0.82, '#33363f'); bg.addColorStop(1, '#22242b');
+    ctx.fillStyle = bg; ctx.fill();
+    ctx.strokeStyle = 'rgba(25,25,30,0.9)'; ctx.lineWidth = 2.4; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(66,-88); ctx.lineTo(122,-160); ctx.lineTo(258,-160); ctx.lineTo(314,-88); ctx.closePath();
+    ctx.fillStyle = '#0f1218'; ctx.fill();
+    for (let i = 0; i < 8; i++) {
+      const y = -98 - i * 8; const t = (-y - 88) / 72;
+      const xl = 66 + 56 * t + 7, xr = 314 - 56 * t - 7;
+      ctx.fillStyle = '#4a525f'; ctx.fillRect(xl, y - 2.6, xr - xl, 5.2);
+      ctx.fillStyle = 'rgba(140,152,172,0.6)'; ctx.fillRect(xl, y - 2.6, xr - xl, 1.3);
+    }
+    ctx.strokeStyle = 'rgba(152,162,182,0.5)'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(22, -82); ctx.lineTo(358, -82); ctx.stroke();
+    ctx.fillStyle = '#181a20'; ctx.fillRect(8, -30, 364, 23);
+    ctx.fillStyle = 'rgba(70,76,88,0.5)';
+    for (let i = 0; i < 5; i++) ctx.fillRect(40 + i * 68, -26, 3, 15);
+    const cluster = (x) => {
+      ctx.save(); ctx.shadowColor = 'rgba(254,103,0,0.75)'; ctx.shadowBlur = 16;
+      ctx.fillStyle = '#2a0d05'; ctx.fillRect(x, -68, 124, 31);
+      for (let i = 0; i < 3; i++) {
+        const tg = ctx.createLinearGradient(0, -66, 0, -39);
+        tg.addColorStop(0, '#a52c08'); tg.addColorStop(0.55, '#fe6700'); tg.addColorStop(1, '#ffb35c');
+        ctx.fillStyle = tg; ctx.fillRect(x + 4 + i * 40, -64, 36, 23);
+      }
+      ctx.restore();
+    };
+    cluster(28); cluster(228);
+    ctx.fillStyle = '#d6d0be'; ctx.fillRect(162, -62, 56, 26);
+    ctx.strokeStyle = '#202020'; ctx.lineWidth = 1.6; ctx.strokeRect(162, -62, 56, 26);
+    ctx.fillStyle = '#202020'; ctx.font = '13px "Share Tech Mono", monospace'; ctx.textAlign = 'center';
+    ctx.fillText('ATTN-88', 190, -43);
+    let rg = ctx.createLinearGradient(0, -36, 0, -4);
+    rg.addColorStop(0, 'rgba(254,103,0,0)'); rg.addColorStop(1, 'rgba(254,103,0,0.28)');
+    ctx.fillStyle = rg; ctx.fillRect(4, -36, 372, 32);
+    ctx.save(); ctx.strokeStyle = 'rgba(150,170,208,0.55)'; ctx.lineWidth = 2; ctx.shadowColor = 'rgba(150,170,208,0.5)'; ctx.shadowBlur = 6;
+    ctx.beginPath(); ctx.moveTo(120, -165); ctx.lineTo(260, -165); ctx.stroke();
+    ctx.restore();
+    ctx.fillStyle = '#23262e';
+    ctx.fillRect(-12, -128, 26, 14); ctx.fillRect(366, -128, 26, 14);
+    ctx.restore();
+    for (const hx of [cx0 - CW*0.26, cx0 + CW*0.26]) {
+      g = ctx.createRadialGradient(hx, gy - 65, 0, hx, gy - 65, 90);
+      g.addColorStop(0, 'rgba(254,120,20,0.16)'); g.addColorStop(1, 'rgba(254,120,20,0)');
+      ctx.fillStyle = g; ctx.fillRect(hx - 90, gy - 155, 180, 180);
+    }
+    this.vignette(ctx, w, h, 0.55);
+    this.grain(ctx, w, h, 0.09);
+  }
+}
+</script>
+</body>
+</html>

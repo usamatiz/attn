@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Permanent+Marker&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#1a1916}</style>
+</helmet>
+<div style="width:max-content;min-width:1380px;background:#1a1916;padding:44px 48px 64px;font-family:Archivo,sans-serif;color:#d8d2c4">
+
+  <!-- Header -->
+  <div style="display:flex;align-items:baseline;gap:18px;border-bottom:1px solid rgba(216,210,196,.2);padding-bottom:18px;margin-bottom:34px">
+    <div style="font-family:Anton;font-size:34px;letter-spacing:.5px;color:#e8e2d4">ATTN<span style="color:#fe6700">!</span> — CINEMATIC IMAGE LAYER</div>
+    <div style="font-family:'Share Tech Mono',monospace;font-size:12px;color:rgba(216,210,196,.6)">CONTACT SHEET 01 · LOW-RES · FOR SIGN-OFF · 05 JUL 2026 · GRADE: 1985 ONE-SHEET</div>
+  </div>
+
+  <!-- Row 1: Hero -->
+  <div style="display:flex;gap:32px;align-items:flex-start;margin-bottom:40px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="position:relative;width:672px;height:372px;background:#0b0d12;outline:1px solid rgba(216,210,196,.18)">
+        <canvas id="cv-hero" width="1120" height="620" style="width:672px;height:372px;display:block"></canvas>
+        <div style="position:absolute;left:25%;top:25%;width:50%;height:50%;border:1px dashed rgba(255,255,255,.3);pointer-events:none">
+          <div style="position:absolute;left:6px;top:4px;font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(255,255,255,.45)">MOBILE CROP-SAFE 560×310</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#fe6700">SLOT 1</span>
+        <span style="font-size:13px;font-weight:600;color:#e8e2d4">Hero storm scene</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.55)">1120×620 @1x · anonymous coupe, rear ¾ · plate ATTN-88</span>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.5);max-width:640px">STATUS: COMP r2 — direct rear view per mock: louvred screen, split taillight clusters, steel body, twin trails, dual bolts. Licensing-safe generic styling. Lightning A/B + light regrade follow after sign-off.</div>
+    </div>
+
+    <!-- Slot 3: Blueprint cover -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div id="bp-card" style="position:relative;width:264px;height:360px;background:#14161c;outline:1px solid rgba(216,210,196,.18);overflow:hidden">
+        <div style="position:absolute;inset:9px;border:2px solid #fe6700"></div>
+        <div style="position:absolute;left:0;right:0;top:34px;text-align:center;font-family:Anton;font-size:22px;color:#e8e2d4;letter-spacing:1px">ATTN<span style="color:#fe6700">!</span></div>
+        <div style="position:absolute;left:0;right:0;top:62px;text-align:center;font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:2px;color:rgba(216,210,196,.55)">FIELD MANUAL</div>
+        <div style="position:absolute;left:24px;right:24px;top:118px;font-family:Anton;font-size:34px;line-height:1.06;color:#ece7da;text-transform:uppercase">Growth Strategy Blueprint</div>
+        <div style="position:absolute;left:24px;top:252px;font-family:'Share Tech Mono',monospace;font-size:8px;letter-spacing:1.5px;color:#F7A84D">DOC 88 · REV A</div>
+        <canvas id="cv-bp" width="528" height="720" style="position:absolute;inset:0;width:264px;height:360px;pointer-events:none"></canvas>
+      </div>
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#fe6700">SLOT 3</span>
+        <span style="font-size:13px;font-weight:600;color:#e8e2d4">Blueprint cover</span>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.5);max-width:264px">660×900 @1x · reads at 240px · STATUS: PRODUCED — light regrade after sign-off.</div>
+    </div>
+
+    <!-- Slot 2: Portrait -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="width:250px;height:288px;outline:1px solid rgba(216,210,196,.18)">
+        <canvas id="cv-portrait" width="600" height="690" style="width:250px;height:288px;display:block"></canvas>
+      </div>
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#fe6700">SLOT 2</span>
+        <span style="font-size:13px;font-weight:600;color:#e8e2d4">Will portrait</span>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.5);max-width:250px">600×690 @1x · STATUS: PLACEHOLDER — blocked on Will (real B&W photo to be supplied).</div>
+    </div>
+  </div>
+
+  <!-- Row 2: logos + textures -->
+  <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap">
+
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:10px;background:#211f1b;padding:16px;outline:1px solid rgba(216,210,196,.18)">
+        <sc-for list="{{ pubs }}" as="p" hint-placeholder-count="6">
+          <div style="width:118px;height:44px;display:flex;align-items:center;justify-content:center;border:1px dashed rgba(216,210,196,.3);font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,210,196,.5);text-align:center">{{ p }}</div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#fe6700">SLOT 4</span>
+        <span style="font-size:13px;font-weight:600;color:#e8e2d4">Featured-in logos</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.5)">~140×48 each · mono · PLACEHOLDER — awaiting confirmed publication list, else section is cut</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:10px;background:#211f1b;padding:16px;outline:1px solid rgba(216,210,196,.18)">
+        <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
+          <div style="width:104px;height:44px;display:flex;align-items:center;justify-content:center;border:1px dashed rgba(216,210,196,.3);font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,210,196,.5);text-align:center">{{ c }}</div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:12px;align-items:baseline">
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#fe6700">SLOT 5</span>
+        <span style="font-size:13px;font-weight:600;color:#e8e2d4">Client marks</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.5)">~120×48 · mono · PLACEHOLDER — ViewTek pending permission</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:36px">
+    <div style="display:flex;gap:14px">
+      <div style="display:flex;flex-direction:column;gap:5px"><canvas id="cv-tex1" width="600" height="400" style="width:300px;height:200px;outline:1px solid rgba(216,210,196,.18)"></canvas><span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(216,210,196,.5)">6A PAPER FIBRE</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><canvas id="cv-tex2" width="600" height="400" style="width:300px;height:200px;outline:1px solid rgba(216,210,196,.18)"></canvas><span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(216,210,196,.5)">6B HALFTONE DOT</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><canvas id="cv-tex3" width="600" height="400" style="width:300px;height:200px;outline:1px solid rgba(216,210,196,.18)"></canvas><span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(216,210,196,.5)">6C TAPE STRIPS</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><canvas id="cv-tex4" width="600" height="400" style="width:300px;height:200px;outline:1px solid rgba(216,210,196,.18)"></canvas><span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(216,210,196,.5)">6D TORN EDGE</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:baseline">
+      <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:#fe6700">SLOT 6</span>
+      <span style="font-size:13px;font-weight:600;color:#e8e2d4">Section texture pack (optional)</span>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.5)">1200×800 tileable · STATUS: PRODUCED</span>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(216,210,196,.45);max-width:900px;border-top:1px solid rgba(216,210,196,.15);padding-top:14px">
+    GRADE APPLIED: warm blacks #0b0d12→#100c08 · storm blues desaturated 30–40% · soft orange bloom, no neon · film grain ~8% · filmic S-curve, lifted blacks · gentle vignette + halation on practicals. NO cyan lighting, no lens flares, no gloss.
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      pubs: ['PUBLICATION 01','PUBLICATION 02','PUBLICATION 03','PUBLICATION 04','PUBLICATION 05','PUBLICATION 06'],
+      clients: ['VIEWTEK *','CLIENT 02','CLIENT 03','CLIENT 04','CLIENT 05','CLIENT 06']
+    };
+  }
+  componentDidMount() {
+    document.fonts.ready.then(() => this.drawAll());
+  }
+  rng(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  grain(ctx, w, h, amt) {
+    const c = document.createElement('canvas'); c.width = w >> 1; c.height = h >> 1;
+    const x = c.getContext('2d'); const d = x.createImageData(c.width, c.height);
+    for (let i = 0; i < d.data.length; i += 4) { const v = Math.random() * 255; d.data[i] = d.data[i+1] = d.data[i+2] = v; d.data[i+3] = 255; }
+    x.putImageData(d, 0, 0);
+    ctx.save(); ctx.globalAlpha = amt; ctx.globalCompositeOperation = 'overlay'; ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(c, 0, 0, w, h); ctx.restore();
+  }
+  vignette(ctx, w, h, amt) {
+    const g = ctx.createRadialGradient(w/2, h/2, Math.min(w,h)*0.35, w/2, h/2, Math.max(w,h)*0.72);
+    g.addColorStop(0, 'rgba(5,5,8,0)'); g.addColorStop(1, 'rgba(5,5,8,' + amt + ')');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  }
+  drawAll() {
+    this.drawHero2(); this.drawPortrait(); this.drawBlueprint(); this.drawTextures();
+  }
+
+  drawHero() {
+    const cv = document.getElementById('cv-hero'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 1120, h = 620; const R = this.rng(88);
+    const hz = h * 0.62;
+    // sky
+    let g = ctx.createLinearGradient(0, 0, 0, hz);
+    g.addColorStop(0, '#10151f'); g.addColorStop(0.5, '#22304a'); g.addColorStop(0.85, '#3a3428'); g.addColorStop(1, '#241c14');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz + 2);
+    // airbrushed cloud billows
+    for (let i = 0; i < 160; i++) {
+      const cx = R() * w, cy = R() * hz * 0.9, r = 30 + R() * 130;
+      const dark = R() > 0.5;
+      const cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      const col = dark ? '26,34,52' : '62,76,104';
+      cg.addColorStop(0, 'rgba(' + col + ',' + (0.05 + R() * 0.09) + ')'); cg.addColorStop(1, 'rgba(' + col + ',0)');
+      ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(cx, cy, r * 1.4, r * 0.7, 0, 0, 7); ctx.fill();
+    }
+    // warm rim clouds near horizon
+    for (let i = 0; i < 40; i++) {
+      const cx = R() * w, cy = hz - 20 - R() * 90, r = 25 + R() * 80;
+      const cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      cg.addColorStop(0, 'rgba(120,86,50,' + (0.05 + R() * 0.07) + ')'); cg.addColorStop(1, 'rgba(120,86,50,0)');
+      ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(cx, cy, r * 1.5, r * 0.55, 0, 0, 7); ctx.fill();
+    }
+    // strike illumination
+    g = ctx.createRadialGradient(w*0.8, h*0.12, 0, w*0.8, h*0.12, w*0.38);
+    g.addColorStop(0, 'rgba(230,225,215,0.22)'); g.addColorStop(1, 'rgba(230,225,215,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz);
+    // lightning bolt upper right
+    const bolt = [[w*0.84, -10]];
+    let bx = w*0.84, by = -10;
+    while (by < h*0.42) { bx += (R() - 0.52) * 46; by += 24 + R() * 30; bolt.push([bx, by]); }
+    const strokeBolt = (pts, lw, style, blur) => {
+      ctx.save(); ctx.strokeStyle = style; ctx.lineWidth = lw; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if (blur) { ctx.shadowColor = 'rgba(255,225,185,0.9)'; ctx.shadowBlur = blur; }
+      ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); ctx.restore();
+    };
+    strokeBolt(bolt, 12, 'rgba(255,238,215,0.18)', 42);
+    strokeBolt(bolt, 3.4, '#fff4e2', 24);
+    strokeBolt(bolt, 1.3, '#ffffff', 0);
+    // branches
+    for (let b = 0; b < 2; b++) {
+      const st = bolt[3 + b * 3]; if (!st) break;
+      const br = [[st[0], st[1]]]; let x2 = st[0], y2 = st[1];
+      for (let i = 0; i < 4; i++) { x2 += (b ? 1 : -1) * (14 + R() * 26); y2 += 16 + R() * 22; br.push([x2, y2]); }
+      strokeBolt(br, 1.6, 'rgba(255,244,226,0.75)', 12);
+    }
+    // road
+    g = ctx.createLinearGradient(0, hz, 0, h);
+    g.addColorStop(0, '#191713'); g.addColorStop(0.25, '#0e0d10'); g.addColorStop(1, '#100c08');
+    ctx.fillStyle = g; ctx.fillRect(0, hz, w, h - hz);
+    // car anchor
+    const cx0 = w * 0.63, gy = h * 0.80, CW = 340;
+    // warm underglow behind car
+    g = ctx.createRadialGradient(cx0, gy - 10, 0, cx0, gy - 10, w * 0.34);
+    g.addColorStop(0, 'rgba(254,103,0,0.32)'); g.addColorStop(0.5, 'rgba(200,80,10,0.12)'); g.addColorStop(1, 'rgba(200,80,10,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, hz - 60, w, h);
+    // perspective streaks on road
+    ctx.save(); ctx.globalAlpha = 0.05; ctx.strokeStyle = '#c8a070';
+    for (let i = 0; i < 14; i++) {
+      ctx.beginPath(); ctx.moveTo(w*0.55 + (R()-0.5)*80, hz + 4);
+      ctx.lineTo((R()) * w * 1.4 - w*0.2, h + 20); ctx.stroke();
+    }
+    ctx.restore();
+    // fire trails: pair converging to rear wheels
+    const trail = (x0, y0, x1, y1, seed) => {
+      const r2 = this.rng(seed);
+      const midx = (x0 + x1) / 2 + 30, midy = (y0 + y1) / 2 + 26;
+      const path = () => { ctx.beginPath(); ctx.moveTo(x0, y0); ctx.quadraticCurveTo(midx, midy, x1, y1); };
+      ctx.save();
+      ctx.shadowColor = 'rgba(254,120,10,0.85)'; ctx.shadowBlur = 26;
+      ctx.strokeStyle = 'rgba(254,103,0,0.4)'; ctx.lineWidth = 16; ctx.lineCap = 'round'; path(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,154,60,0.85)'; ctx.lineWidth = 7; path(); ctx.stroke();
+      ctx.shadowBlur = 10; ctx.strokeStyle = '#ffe3b4'; ctx.lineWidth = 2.6; path(); ctx.stroke();
+      ctx.restore();
+      // sparks
+      ctx.save();
+      for (let i = 0; i < 26; i++) {
+        const t = r2(); const px = (1-t)*(1-t)*x0 + 2*(1-t)*t*midx + t*t*x1 + (r2()-0.5)*22;
+        const py = (1-t)*(1-t)*y0 + 2*(1-t)*t*midy + t*t*y1 + (r2()-0.5)*16;
+        ctx.fillStyle = 'rgba(255,' + (170 + (r2()*60|0)) + ',90,' + (0.3 + r2()*0.5) + ')';
+        ctx.beginPath(); ctx.arc(px, py, 0.8 + r2() * 1.8, 0, 7); ctx.fill();
+      }
+      ctx.restore();
+    };
+    trail(cx0 - CW*0.95, h + 30, cx0 + 78, gy + 12, 3);
+    trail(cx0 - CW*1.35, h + 60, cx0 - 96, gy + 15, 9);
+    // wet reflections under trails/car
+    ctx.save(); ctx.globalAlpha = 0.10;
+    for (let i = 0; i < 30; i++) {
+      const rx = cx0 - CW*0.8 + R() * CW * 1.1, rl = 12 + R() * 60;
+      const rg = ctx.createLinearGradient(0, gy + 8, 0, gy + 8 + rl);
+      rg.addColorStop(0, 'rgba(254,130,30,0.5)'); rg.addColorStop(1, 'rgba(254,130,30,0)');
+      ctx.fillStyle = rg; ctx.fillRect(rx, gy + 8, 2 + R() * 3, rl);
+    }
+    ctx.restore();
+    // ---- car silhouette, rear 3/4 ----
+    ctx.save(); ctx.translate(cx0 - CW / 2, gy);
+    const body = [[334,0],[338,-14],[336,-40],[328,-54],[324,-58],[252,-94],[160,-99],[104,-72],[30,-58],[8,-52],[2,-22],[6,-12],[334,-8]];
+    ctx.beginPath(); body.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath();
+    let bg = ctx.createLinearGradient(0, -100, 0, 0);
+    bg.addColorStop(0, '#171922'); bg.addColorStop(0.6, '#0e0f14'); bg.addColorStop(1, '#0a0a0d');
+    ctx.fillStyle = bg; ctx.fill();
+    // ink outline
+    ctx.strokeStyle = 'rgba(32,32,32,0.9)'; ctx.lineWidth = 2; ctx.stroke();
+    // rear window louvre slats (generic)
+    ctx.save(); ctx.clip();
+    ctx.strokeStyle = 'rgba(60,66,84,0.55)'; ctx.lineWidth = 3;
+    for (let i = 0; i < 5; i++) {
+      ctx.beginPath(); ctx.moveTo(250 - i * 15, -90 + i * 7.4); ctx.lineTo(322 - i * 4, -56 + i * 0.5); ctx.stroke();
+    }
+    // side crease / gullwing seam
+    ctx.strokeStyle = 'rgba(90,96,116,0.4)'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(20, -50); ctx.lineTo(240, -60); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(150, -98); ctx.lineTo(140, -62); ctx.stroke();
+    // warm reflection on lower side panel
+    let rg = ctx.createLinearGradient(0, -34, 0, -6);
+    rg.addColorStop(0, 'rgba(254,103,0,0)'); rg.addColorStop(1, 'rgba(254,103,0,0.22)');
+    ctx.fillStyle = rg; ctx.fillRect(0, -36, 340, 32);
+    ctx.restore();
+    // taillight bar
+    let tg = ctx.createLinearGradient(0, -50, 0, -32);
+    tg.addColorStop(0, '#8a2408'); tg.addColorStop(0.5, '#fe6700'); tg.addColorStop(1, '#b13a08');
+    ctx.save(); ctx.shadowColor = 'rgba(254,103,0,0.7)'; ctx.shadowBlur = 14;
+    ctx.fillStyle = tg; ctx.fillRect(266, -50, 62, 15); ctx.restore();
+    ctx.fillStyle = 'rgba(16,12,8,0.85)';
+    for (let i = 1; i < 4; i++) ctx.fillRect(266 + i * 15.5, -50, 2, 15);
+    // plate ATTN-88
+    ctx.fillStyle = '#cfc9ba'; ctx.fillRect(224, -32, 46, 15);
+    ctx.strokeStyle = '#202020'; ctx.lineWidth = 1; ctx.strokeRect(224, -32, 46, 15);
+    ctx.fillStyle = '#202020'; ctx.font = '10px "Share Tech Mono", monospace'; ctx.textAlign = 'center';
+    ctx.fillText('ATTN-88', 247, -20.5);
+    // wheels
+    ctx.fillStyle = '#08080a';
+    ctx.beginPath(); ctx.ellipse(290, -16, 32, 26, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(68, -18, 24, 20, 0, 0, 7); ctx.fill();
+    // rim light bottom edge
+    ctx.save(); ctx.shadowColor = 'rgba(247,168,77,0.8)'; ctx.shadowBlur = 8;
+    ctx.strokeStyle = 'rgba(247,168,77,0.85)'; ctx.lineWidth = 2; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(10, -12); ctx.lineTo(330, -8); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(334, -10); ctx.lineTo(338, -34); ctx.stroke();
+    ctx.strokeStyle = 'rgba(247,168,77,0.45)';
+    ctx.beginPath(); ctx.moveTo(8, -52); ctx.lineTo(100, -70); ctx.stroke();
+    ctx.restore();
+    // ground shadow + glow under car
+    ctx.restore();
+    g = ctx.createRadialGradient(cx0, gy + 4, 0, cx0, gy + 4, CW * 0.65);
+    g.addColorStop(0, 'rgba(0,0,0,0.55)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(cx0, gy + 6, CW * 0.62, 20, 0, 0, 7); ctx.fill();
+    // focus falloff left (copy side) + edges
+    g = ctx.createLinearGradient(0, 0, w * 0.42, 0);
+    g.addColorStop(0, 'rgba(11,13,18,0.88)'); g.addColorStop(1, 'rgba(11,13,18,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w * 0.42, h);
+    this.vignette(ctx, w, h, 0.5);
+    this.grain(ctx, w, h, 0.09);
+  }
+
+  drawPortrait() {
+    const cv = document.getElementById('cv-portrait'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 600, h = 690; const R = this.rng(2);
+    let g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, '#8d8d8d'); g.addColorStop(1, '#666666');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    // framing guide: head circle + shoulders block
+    ctx.strokeStyle = 'rgba(40,40,40,0.5)'; ctx.lineWidth = 2; ctx.setLineDash([8, 8]);
+    ctx.beginPath(); ctx.arc(w/2, h*0.34, 95, 0, 7); ctx.stroke();
+    ctx.strokeRect(w*0.18, h*0.52, w*0.64, h*0.42);
+    ctx.setLineDash([]);
+    // crosshair
+    ctx.strokeStyle = 'rgba(40,40,40,0.35)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(w/2, h*0.30); ctx.lineTo(w/2, h*0.38); ctx.moveTo(w/2-24, h*0.34); ctx.lineTo(w/2+24, h*0.34); ctx.stroke();
+    // labels
+    ctx.fillStyle = '#2c2c2c'; ctx.textAlign = 'center';
+    ctx.font = '26px "Share Tech Mono", monospace';
+    ctx.fillText('SLOT 2 — WILL PORTRAIT', w/2, h*0.60);
+    ctx.font = '19px "Share Tech Mono", monospace'; ctx.fillStyle = 'rgba(44,44,44,0.75)';
+    ctx.fillText('REAL B&W PHOTO TO BE SUPPLIED', w/2, h*0.65);
+    ctx.font = '16px "Share Tech Mono", monospace'; ctx.fillStyle = 'rgba(44,44,44,0.6)';
+    ctx.fillText('arms crossed · single key light', w/2, h*0.71);
+    ctx.fillText('mid-grey backdrop · heavy grain', w/2, h*0.745);
+    this.vignette(ctx, w, h, 0.45);
+    this.grain(ctx, w, h, 0.14);
+  }
+
+  drawBlueprint() {
+    const cv = document.getElementById('cv-bp'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 528, h = 720; const R = this.rng(7);
+    // faint blueprint linework, lower third — desaturated blue-grey
+    ctx.save();
+    ctx.strokeStyle = 'rgba(130,148,178,0.16)'; ctx.lineWidth = 1;
+    const y0 = h * 0.66;
+    for (let x = 36; x < w - 36; x += 24) { ctx.beginPath(); ctx.moveTo(x, y0); ctx.lineTo(x, h - 36); ctx.stroke(); }
+    for (let y = y0; y < h - 36; y += 24) { ctx.beginPath(); ctx.moveTo(36, y); ctx.lineTo(w - 36, y); ctx.stroke(); }
+    ctx.strokeStyle = 'rgba(130,148,178,0.30)'; ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.arc(w * 0.32, h * 0.82, 52, 0, 7); ctx.stroke();
+    ctx.beginPath(); ctx.arc(w * 0.32, h * 0.82, 30, 0, 7); ctx.stroke();
+    ctx.strokeRect(w * 0.55, h * 0.75, 130, 82);
+    ctx.beginPath(); ctx.moveTo(w * 0.55, h * 0.72); ctx.lineTo(w * 0.55 + 130, h * 0.72); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(w * 0.32 - 52, h * 0.90); ctx.lineTo(w * 0.32 + 52, h * 0.90); ctx.stroke();
+    ctx.restore();
+    this.vignette(ctx, w, h, 0.35);
+    this.grain(ctx, w, h, 0.09);
+  }
+
+  drawTextures() {
+    // 6A paper fibre
+    let cv = document.getElementById('cv-tex1'), ctx, w = 600, h = 400;
+    if (cv) {
+      ctx = cv.getContext('2d'); const R = this.rng(11);
+      ctx.fillStyle = '#d9d2c2'; ctx.fillRect(0, 0, w, h);
+      for (let i = 0; i < 500; i++) {
+        ctx.strokeStyle = R() > 0.5 ? 'rgba(120,110,90,0.10)' : 'rgba(255,252,240,0.16)';
+        ctx.lineWidth = 0.7 + R();
+        const x = R() * w, y = R() * h, a = R() * Math.PI, l = 4 + R() * 14;
+        ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l); ctx.stroke();
+      }
+      this.grain(ctx, w, h, 0.10);
+    }
+    // 6B halftone
+    cv = document.getElementById('cv-tex2');
+    if (cv) {
+      ctx = cv.getContext('2d');
+      ctx.fillStyle = '#e9e4d6'; ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(32,32,32,0.85)';
+      for (let y = 6; y < h; y += 13) for (let x = 6 + (y % 26 ? 6.5 : 0); x < w; x += 13) {
+        const r = 1.2 + 2.6 * (x / w) * (0.4 + 0.6 * y / h);
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+      }
+      this.grain(ctx, w, h, 0.07);
+    }
+    // 6C tape strips
+    cv = document.getElementById('cv-tex3');
+    if (cv) {
+      ctx = cv.getContext('2d'); const R = this.rng(23);
+      ctx.fillStyle = '#d9d2c2'; ctx.fillRect(0, 0, w, h);
+      const tape = (x, y, len, ang) => {
+        ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
+        ctx.fillStyle = 'rgba(226,196,148,0.55)';
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        for (let i = 0; i <= 4; i++) ctx.lineTo(-6 + R() * 8, i * 13);
+        ctx.lineTo(0, 52); ctx.lineTo(len, 52);
+        for (let i = 4; i >= 0; i--) ctx.lineTo(len + 6 - R() * 8, i * 13);
+        ctx.closePath(); ctx.fill();
+        ctx.fillStyle = 'rgba(150,120,80,0.12)'; ctx.fillRect(0, 0, len, 5); ctx.fillRect(0, 47, len, 5);
+        ctx.restore();
+      };
+      tape(70, 60, 220, -0.06); tape(240, 180, 260, 0.05); tape(90, 290, 180, -0.03);
+      this.grain(ctx, w, h, 0.09);
+    }
+    // 6D torn edge
+    cv = document.getElementById('cv-tex4');
+    if (cv) {
+      ctx = cv.getContext('2d'); const R = this.rng(31);
+      ctx.fillStyle = '#100c08'; ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = '#d9d2c2';
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(w, 0); ctx.lineTo(w, h * 0.6);
+      for (let x = w; x >= 0; x -= 14) ctx.lineTo(x, h * 0.6 + (R() - 0.5) * 26 + Math.sin(x * 0.02) * 14);
+      ctx.closePath(); ctx.fill();
+      // fibre shadow under tear
+      ctx.strokeStyle = 'rgba(120,110,90,0.35)'; ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      const R2 = this.rng(31); ctx.moveTo(w, h * 0.6);
+      for (let x = w; x >= 0; x -= 14) ctx.lineTo(x, h * 0.6 + (R2() - 0.5) * 26 + Math.sin(x * 0.02) * 14);
+      ctx.stroke();
+      this.grain(ctx, w, h, 0.10);
+    }
+  }
+
+  drawHero2() {
+    const cv = document.getElementById('cv-hero'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 1120, h = 620; const R = this.rng(88);
+    ctx.clearRect(0, 0, w, h);
+    const hz = h * 0.58;
+    // ---- storm sky ----
+    let g = ctx.createLinearGradient(0, 0, 0, hz);
+    g.addColorStop(0, '#0c1124'); g.addColorStop(0.45, '#1e2a4e'); g.addColorStop(0.8, '#333a5c'); g.addColorStop(1, '#2e2840');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz + 2);
+    for (let i = 0; i < 230; i++) {
+      const cx = R() * w, cy = R() * hz, r = 30 + R() * 140, t = R();
+      const col = t < 0.4 ? '20,30,60' : (t < 0.75 ? '96,112,158' : '70,58,102');
+      const cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      cg.addColorStop(0, 'rgba(' + col + ',' + (0.07 + R() * 0.15) + ')'); cg.addColorStop(1, 'rgba(' + col + ',0)');
+      ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(cx, cy, r * 1.5, r * 0.65, 0, 0, 7); ctx.fill();
+    }
+    // warm core behind car
+    g = ctx.createRadialGradient(w * 0.5, hz - 4, 0, w * 0.5, hz - 4, w * 0.30);
+    g.addColorStop(0, 'rgba(215,112,38,0.45)'); g.addColorStop(1, 'rgba(215,112,38,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz + 4);
+    // ---- lightning ----
+    const strokePts = (pts, lw, style, blur) => {
+      ctx.save(); ctx.strokeStyle = style; ctx.lineWidth = lw; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if (blur) { ctx.shadowColor = 'rgba(255,235,205,0.9)'; ctx.shadowBlur = blur; }
+      ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); ctx.restore();
+    };
+    const bolt = (x0, endY, big) => {
+      const pts = [[x0, -10]]; let bx = x0, by = -10;
+      while (by < endY) { bx += (R() - 0.5) * 52; by += 22 + R() * 30; pts.push([bx, by]); }
+      const ig = ctx.createRadialGradient(x0, h * 0.1, 0, x0, h * 0.1, w * 0.3);
+      ig.addColorStop(0, 'rgba(225,222,215,' + (big ? 0.20 : 0.10) + ')'); ig.addColorStop(1, 'rgba(225,222,215,0)');
+      ctx.fillStyle = ig; ctx.fillRect(0, 0, w, hz);
+      strokePts(pts, big ? 13 : 8, 'rgba(255,240,218,0.16)', 40);
+      strokePts(pts, big ? 3.6 : 2.4, '#fff4e2', 22);
+      strokePts(pts, big ? 1.4 : 1, '#ffffff', 0);
+      for (let b = 0; b < (big ? 3 : 1); b++) {
+        const st = pts[2 + b * 3]; if (!st) break;
+        const br = [[st[0], st[1]]]; let x2 = st[0], y2 = st[1];
+        for (let i = 0; i < 4; i++) { x2 += (b % 2 ? 1 : -1) * (12 + R() * 26); y2 += 14 + R() * 22; br.push([x2, y2]); }
+        strokePts(br, 1.5, 'rgba(255,244,226,0.7)', 10);
+      }
+    };
+    bolt(w * 0.85, h * 0.44, true);
+    bolt(w * 0.13, h * 0.34, false);
+    // ---- road ----
+    g = ctx.createLinearGradient(0, hz, 0, h);
+    g.addColorStop(0, '#161a26'); g.addColorStop(0.3, '#0f0e13'); g.addColorStop(1, '#0d0a08');
+    ctx.fillStyle = g; ctx.fillRect(0, hz, w, h - hz);
+    ctx.fillStyle = 'rgba(96,114,152,0.10)'; ctx.fillRect(0, hz, w, 26);
+    // ---- car anchor ----
+    const k = 1.1, CW = 380 * k, cx0 = w * 0.52, gy = h * 0.74;
+    // underglow pool
+    g = ctx.createRadialGradient(cx0, gy - 8, 0, cx0, gy - 8, CW * 0.75);
+    g.addColorStop(0, 'rgba(254,103,0,0.42)'); g.addColorStop(0.5, 'rgba(210,85,10,0.14)'); g.addColorStop(1, 'rgba(210,85,10,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, hz - 30, w, h);
+    // ---- fire trails to both corners ----
+    const trail = (sx, sy, ex, ey, mx, my, seed) => {
+      const r2 = this.rng(seed);
+      const path = () => { ctx.beginPath(); ctx.moveTo(sx, sy); ctx.quadraticCurveTo(mx, my, ex, ey); };
+      ctx.save(); ctx.lineCap = 'round';
+      ctx.shadowColor = 'rgba(254,115,10,0.85)'; ctx.shadowBlur = 30;
+      ctx.strokeStyle = 'rgba(254,103,0,0.35)'; ctx.lineWidth = 30; path(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,150,50,0.8)'; ctx.lineWidth = 13; path(); ctx.stroke();
+      ctx.shadowBlur = 12; ctx.strokeStyle = '#ffe6ba'; ctx.lineWidth = 4.5; path(); ctx.stroke();
+      ctx.shadowBlur = 0; ctx.strokeStyle = '#fff8ea'; ctx.lineWidth = 1.6; path(); ctx.stroke();
+      for (let i = 0; i < 42; i++) {
+        const t = r2(); const px = (1-t)*(1-t)*sx + 2*(1-t)*t*mx + t*t*ex + (r2()-0.5)*30;
+        const py = (1-t)*(1-t)*sy + 2*(1-t)*t*my + t*t*ey + (r2()-0.5)*20;
+        ctx.fillStyle = 'rgba(255,' + (165 + (r2()*70|0)) + ',85,' + (0.25 + r2()*0.55) + ')';
+        ctx.beginPath(); ctx.arc(px, py, 0.8 + r2() * 2.2, 0, 7); ctx.fill();
+      }
+      ctx.restore();
+    };
+    trail(cx0 - CW*0.24, gy - 4, w*0.02, h + 70, cx0 - CW*0.72, gy + 66, 3);
+    trail(cx0 + CW*0.24, gy - 4, w*0.98, h + 70, cx0 + CW*0.72, gy + 66, 9);
+    // wet reflections
+    ctx.save(); ctx.globalAlpha = 0.13;
+    for (let i = 0; i < 36; i++) {
+      const rx = cx0 - CW*0.55 + R() * CW * 1.1, rl = 14 + R() * 70;
+      const rg = ctx.createLinearGradient(0, gy + 6, 0, gy + 6 + rl);
+      rg.addColorStop(0, 'rgba(254,130,30,0.55)'); rg.addColorStop(1, 'rgba(254,130,30,0)');
+      ctx.fillStyle = rg; ctx.fillRect(rx, gy + 6, 2 + R() * 3, rl);
+    }
+    ctx.restore();
+    // ground shadow
+    g = ctx.createRadialGradient(cx0, gy + 2, 0, cx0, gy + 2, CW * 0.6);
+    g.addColorStop(0, 'rgba(0,0,0,0.6)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(cx0, gy + 4, CW * 0.58, 18, 0, 0, 7); ctx.fill();
+    // ---- car: direct rear view, steel body ----
+    ctx.save(); ctx.translate(cx0 - CW / 2, gy); ctx.scale(k, k);
+    // tires
+    ctx.fillStyle = '#0a0a0c';
+    ctx.fillRect(34, -12, 64, 13); ctx.fillRect(282, -12, 64, 13);
+    // body
+    const P = [[0,-6],[6,-46],[14,-70],[20,-80],[60,-86],[118,-166],[262,-166],[320,-86],[360,-80],[366,-70],[374,-46],[380,-6]];
+    ctx.beginPath(); P.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath();
+    let bg = ctx.createLinearGradient(0, -170, 0, 0);
+    bg.addColorStop(0, '#8b93a3'); bg.addColorStop(0.5, '#565d6b'); bg.addColorStop(0.82, '#33363f'); bg.addColorStop(1, '#22242b');
+    ctx.fillStyle = bg; ctx.fill();
+    ctx.strokeStyle = 'rgba(25,25,30,0.9)'; ctx.lineWidth = 2.4; ctx.stroke();
+    // greenhouse + louvres
+    ctx.beginPath(); ctx.moveTo(66,-88); ctx.lineTo(122,-160); ctx.lineTo(258,-160); ctx.lineTo(314,-88); ctx.closePath();
+    ctx.fillStyle = '#0f1218'; ctx.fill();
+    for (let i = 0; i < 8; i++) {
+      const y = -98 - i * 8; const t = (-y - 88) / 72;
+      const xl = 66 + 56 * t + 7, xr = 314 - 56 * t - 7;
+      ctx.fillStyle = '#4a525f'; ctx.fillRect(xl, y - 2.6, xr - xl, 5.2);
+      ctx.fillStyle = 'rgba(140,152,172,0.6)'; ctx.fillRect(xl, y - 2.6, xr - xl, 1.3);
+    }
+    // deck lip
+    ctx.strokeStyle = 'rgba(152,162,182,0.5)'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(22, -82); ctx.lineTo(358, -82); ctx.stroke();
+    // bumper band + diffuser
+    ctx.fillStyle = '#181a20'; ctx.fillRect(8, -30, 364, 23);
+    ctx.fillStyle = 'rgba(70,76,88,0.5)';
+    for (let i = 0; i < 5; i++) ctx.fillRect(40 + i * 68, -26, 3, 15);
+    // taillight clusters
+    const cluster = (x) => {
+      ctx.save(); ctx.shadowColor = 'rgba(254,103,0,0.75)'; ctx.shadowBlur = 16;
+      ctx.fillStyle = '#2a0d05'; ctx.fillRect(x, -68, 124, 31);
+      for (let i = 0; i < 3; i++) {
+        const tg = ctx.createLinearGradient(0, -66, 0, -39);
+        tg.addColorStop(0, '#a52c08'); tg.addColorStop(0.55, '#fe6700'); tg.addColorStop(1, '#ffb35c');
+        ctx.fillStyle = tg; ctx.fillRect(x + 4 + i * 40, -64, 36, 23);
+      }
+      ctx.restore();
+    };
+    cluster(28); cluster(228);
+    // plate
+    ctx.fillStyle = '#d6d0be'; ctx.fillRect(162, -62, 56, 26);
+    ctx.strokeStyle = '#202020'; ctx.lineWidth = 1.6; ctx.strokeRect(162, -62, 56, 26);
+    ctx.fillStyle = '#202020'; ctx.font = '13px "Share Tech Mono", monospace'; ctx.textAlign = 'center';
+    ctx.fillText('ATTN-88', 190, -43);
+    // warm lower reflection
+    let rg = ctx.createLinearGradient(0, -36, 0, -4);
+    rg.addColorStop(0, 'rgba(254,103,0,0)'); rg.addColorStop(1, 'rgba(254,103,0,0.28)');
+    ctx.fillStyle = rg; ctx.fillRect(4, -36, 372, 32);
+    // cool top rim light
+    ctx.save(); ctx.strokeStyle = 'rgba(150,170,208,0.55)'; ctx.lineWidth = 2; ctx.shadowColor = 'rgba(150,170,208,0.5)'; ctx.shadowBlur = 6;
+    ctx.beginPath(); ctx.moveTo(120, -165); ctx.lineTo(260, -165); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(22, -80); ctx.lineTo(60, -86); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(320, -86); ctx.lineTo(358, -80); ctx.stroke();
+    ctx.restore();
+    // mirrors
+    ctx.fillStyle = '#23262e';
+    ctx.fillRect(-12, -128, 26, 14); ctx.fillRect(366, -128, 26, 14);
+    ctx.strokeStyle = 'rgba(25,25,30,0.9)'; ctx.lineWidth = 1.5;
+    ctx.strokeRect(-12, -128, 26, 14); ctx.strokeRect(366, -128, 26, 14);
+    ctx.restore();
+    // taillight halation
+    for (const hx of [cx0 - CW*0.26, cx0 + CW*0.26]) {
+      g = ctx.createRadialGradient(hx, gy - 65, 0, hx, gy - 65, 90);
+      g.addColorStop(0, 'rgba(254,120,20,0.16)'); g.addColorStop(1, 'rgba(254,120,20,0)');
+      ctx.fillStyle = g; ctx.fillRect(hx - 90, gy - 155, 180, 180);
+    }
+    this.vignette(ctx, w, h, 0.55);
+    this.grain(ctx, w, h, 0.09);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Archivo+Black&family=Caveat:wght@600&family=Permanent+Marker&family=Playfair+Display:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#08070a}input,select,textarea{font-family:Archivo,sans-serif}::placeholder{color:#7d7869}a{color:#fe6700}a:hover{color:#F7A84D}</style>
+</helmet>
+<div style="font-family:Archivo,sans-serif;color:#ece7da;background:#08070a">
+
+  <!-- ============ HERO (full-bleed storm scene) ============ -->
+  <div data-screen-label="Hero" style="position:relative;overflow:hidden">
+    <canvas id="hero-cv" width="1440" height="820" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></canvas>
+
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 28px">
+      <!-- NAV -->
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:22px 0">
+        <div style="font-family:'Archivo Black',sans-serif;font-size:27px;letter-spacing:-0.02em;text-shadow:0 2px 8px rgba(0,0,0,.6)">ATTN<span style="color:#fe6700">!</span></div>
+        <div style="display:flex;gap:26px;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-shadow:0 1px 4px rgba(0,0,0,.7)">
+          <span>ABOUT</span><span>SERVICES</span><span>RESULTS</span><span>RESOURCES</span>
+          <span style="border:1.5px solid #fe6700;color:#fe6700;background:rgba(10,8,6,.55);padding:9px 16px;border-radius:4px;font-size:11px;letter-spacing:1.5px">BOOK STRATEGY CALL</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:start;padding:10px 0 46px">
+        <!-- Left: headline over scene + player chrome -->
+        <div style="display:flex;flex-direction:column">
+          <div style="transform:skewX(-7deg);transform-origin:left bottom;display:flex;flex-direction:column;filter:drop-shadow(0 4px 16px rgba(0,0,0,.7))">
+            <span style="font-family:Anton,sans-serif;font-style:italic;font-size:52px;line-height:1;letter-spacing:2px;background:linear-gradient(180deg,#fdfeff 0%,#d3dcea 28%,#8b99b2 46%,#eef3fb 53%,#66748e 72%,#39435a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(150,60,8,.85))">BACK TO THE</span>
+            <span style="font-family:Anton,sans-serif;font-style:italic;font-size:86px;line-height:.98;letter-spacing:3px;background:linear-gradient(180deg,#ffe9b0 0%,#F1B84B 30%,#c86f0a 48%,#ffd98a 56%,#fe6700 78%,#7e3a04 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px rgba(60,22,2,.55);filter:drop-shadow(0 3px 0 rgba(70,25,2,.9)) drop-shadow(0 0 22px rgba(254,103,0,.4))">FUTURE</span>
+          </div>
+          <div style="font-family:Anton,sans-serif;font-style:italic;font-size:27px;letter-spacing:2px;line-height:1.3;margin-top:12px;transform:skewX(-7deg);transform-origin:left top;text-shadow:0 2px 10px rgba(0,0,0,.75)">YOUR BUSINESS. <span style="color:#F7A84D">OUR MISSION.</span></div>
+
+          <!-- video region: scene itself is the poster; play + bar float -->
+          <div style="position:relative;height:300px;margin-top:6px">
+            <div style="position:absolute;left:50%;top:52%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(12,10,14,.5);border:2.5px solid rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(254,103,0,.35)">
+              <div style="border-left:24px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px"></div>
+            </div>
+            <div style="position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:8px 12px;background:rgba(8,7,10,.66);border-radius:4px;font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(236,231,218,.85)">
+              <span>▶</span><span>0:00 / 0:58</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,.22);border-radius:2px"><div style="width:6%;height:100%;background:#fe6700;border-radius:2px"></div></div>
+              <span>🔊</span><span>⟳</span><span>⋮</span>
+            </div>
+          </div>
+
+          <div style="font-size:16px;line-height:1.65;margin-top:16px;color:rgba(236,231,218,.92);text-shadow:0 1px 6px rgba(0,0,0,.8)">We blend data, creativity and cutting-edge strategy<br>to take your brand from where it is,<br><span style="color:#fe6700;font-weight:700">to where it's going.</span></div>
+        </div>
+
+        <!-- Right: form card -->
+        <div style="border:1.5px solid rgba(254,103,0,.55);border-radius:3px;padding:24px 22px;display:flex;flex-direction:column;gap:11px;background:rgba(10,9,13,.78);backdrop-filter:blur(4px);box-shadow:0 10px 40px rgba(0,0,0,.5)">
+          <div style="font-family:Anton,sans-serif;font-style:italic;font-size:25px;letter-spacing:1px;line-height:1.18">BOOK YOUR <span style="color:#fe6700">FREE</span><br>STRATEGY CALL</div>
+          <div style="font-size:13.5px;color:rgba(236,231,218,.75);margin-top:-4px">Let's build what's next.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input placeholder="Full Name" style="background:rgba(22,20,26,.9);border:1px solid rgba(214,196,166,.22);border-radius:4px;padding:12px;color:#ece7da;font-size:13px">
+            <input placeholder="Email Address" style="background:rgba(22,20,26,.9);border:1px solid rgba(214,196,166,.22);border-radius:4px;padding:12px;color:#ece7da;font-size:13px">
+          </div>
+          <input placeholder="Phone Number" style="background:rgba(22,20,26,.9);border:1px solid rgba(214,196,166,.22);border-radius:4px;padding:12px;color:#ece7da;font-size:13px">
+          <select style="background:rgba(22,20,26,.9);border:1px solid rgba(214,196,166,.22);border-radius:4px;padding:12px;color:#7d7869;font-size:13px"><option>Monthly Revenue</option><option>&lt; $10k</option><option>$10k – $50k</option><option>$50k – $200k</option><option>$200k+</option></select>
+          <textarea placeholder="What are you looking to achieve?" rows="3" style="background:rgba(22,20,26,.9);border:1px solid rgba(214,196,166,.22);border-radius:4px;padding:12px;color:#ece7da;font-size:13px;resize:none"></textarea>
+          <div style="background:linear-gradient(180deg,#ff7d1c 0%,#f26202 55%,#dd5602 100%);color:#f8f0e3;text-shadow:0 1px 0 rgba(90,30,0,.4);box-shadow:inset 0 1px 0 rgba(255,200,140,.35),0 2px 8px rgba(0,0,0,.35);text-align:center;padding:14px;border-radius:2px;font-weight:800;font-size:14px;letter-spacing:1.5px;box-shadow:0 4px 18px rgba(254,103,0,.4)">BOOK MY FREE CALL</div>
+          <div style="text-align:center;font-size:11.5px;color:rgba(236,231,218,.6)">🔒 We respect your privacy. No spam. Ever.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURED IN ============ -->
+  <div data-screen-label="Featured in" style="background:#0d0c11;border-top:1px solid rgba(236,231,218,.08);border-bottom:1px solid rgba(236,231,218,.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:26px 28px;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="flex:1;height:1px;background:rgba(236,231,218,.14)"></div>
+        <div style="font-weight:700;font-size:12px;letter-spacing:3px;color:rgba(236,231,218,.8)">AS FEATURED IN</div>
+        <div style="flex:1;height:1px;background:rgba(236,231,218,.14)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;color:#e8e2d4">
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:24px">Forbes</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:20px;font-style:italic">Entrepreneur</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:24px">Inc.</div>
+        <div style="font-weight:700;font-size:13px;letter-spacing:3px;line-height:1.4;text-align:center">BUSINESS<br>INSIDER</div>
+        <div style="font-weight:700;font-size:17px">Marketing Land</div>
+        <div style="font-weight:800;font-size:19px;font-style:italic">yahoo!<span style="font-size:11px;font-weight:600;font-style:normal;letter-spacing:1px"> finance</span></div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:21px;line-height:1">CEO<div style="font-family:Archivo;font-size:9px;font-weight:600;letter-spacing:3.5px;color:rgba(236,231,218,.6)">WEEKLY</div></div>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:9.5px;color:rgba(236,231,218,.35);text-align:center">TYPESET STAND-INS — replace with licensed mastheads once coverage confirmed (brief §8)</div>
+    </div>
+  </div>
+
+  <!-- ============ STRUGGLE ============ -->
+  <div data-screen-label="Struggle" style="background:#08070a">
+    <div style="max-width:1180px;margin:0 auto;padding:54px 28px;display:flex;flex-direction:column;gap:38px">
+      <div style="font-family:Anton,sans-serif;font-style:italic;font-size:32px;text-align:center;transform:skewX(-5deg);letter-spacing:.5px">AS A BUSINESS OWNER, DO YOU <span style="color:#fe6700">STRUGGLE</span> WITH...</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr)">
+        <sc-for list="{{ pains }}" as="pain" hint-placeholder-count="5">
+          <div style="padding:0 18px;text-align:center;display:flex;flex-direction:column;gap:11px;align-items:center;border-right:1px solid rgba(236,231,218,.1)">
+            <div style="width:58px;height:58px;display:flex;align-items:center;justify-content:center" dangerouslySetInnerHTML="{{ pain.icon }}"></div>
+            <div style="font-weight:800;font-size:13.5px;letter-spacing:1px">{{ pain.title }}</div>
+            <div style="font-size:12.5px;line-height:1.55;color:rgba(236,231,218,.62)">{{ pain.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="text-align:center;font-size:22px;font-weight:700;color:#fe6700"><span style="border-bottom:2px solid #fe6700;padding-bottom:3px">You're not alone.</span></div>
+    </div>
+  </div>
+
+  <!-- ============ PROOF ============ -->
+  <div data-screen-label="Proof" style="background:#0d0c11;border-top:1px solid rgba(236,231,218,.08);border-bottom:1px solid rgba(236,231,218,.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 28px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:Anton,sans-serif;font-style:italic;font-size:26px;letter-spacing:1px">YOU'RE NOT ALONE.</div>
+        <div style="font-family:Anton,sans-serif;font-style:italic;font-size:26px;letter-spacing:1px;line-height:1.25">WE HAVE HELPED OVER 350+ BUSINESSES<br>TO SCALE AND GENERATE</div>
+        <div style="font-family:Anton,sans-serif;font-style:italic;font-size:104px;line-height:1;letter-spacing:2px;background:linear-gradient(180deg,#ffe9b0 0%,#F1B84B 30%,#c86f0a 48%,#ffd98a 56%,#fe6700 78%,#7e3a04 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px rgba(60,22,2,.5);filter:drop-shadow(0 3px 0 rgba(70,25,2,.85)) drop-shadow(0 0 30px rgba(254,103,0,.35))">$250M+</div>
+        <div style="font-weight:800;font-size:16px;letter-spacing:2px">IN COMBINED REVENUE FOR OUR CLIENTS</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9.5px;color:rgba(236,231,218,.35)">FIGURES PENDING VERIFICATION · CLIENT MARKS = PLACEHOLDERS UNTIL PERMISSIONS CLEAR</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:26px 14px">
+        <sc-for list="{{ brands }}" as="b" hint-placeholder-count="10">
+          <div style="display:flex;flex-direction:column;gap:9px;align-items:center;opacity:.85">
+            <div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" dangerouslySetInnerHTML="{{ b.icon }}"></div>
+            <div style="font-weight:700;font-size:9.5px;letter-spacing:1.5px;color:rgba(236,231,218,.8)">{{ b.name }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SERVICES ============ -->
+  <div data-screen-label="Services" style="background:#08070a">
+    <div style="max-width:1180px;margin:0 auto;padding:54px 28px;display:flex;flex-direction:column;gap:30px">
+      <div style="font-family:Anton,sans-serif;font-style:italic;font-size:32px;text-align:center;transform:skewX(-5deg);letter-spacing:.5px">HERE'S HOW WE CAN <span style="color:#fe6700">HELP YOU</span></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+          <div style="border:1px solid rgba(214,196,166,.2);border-radius:3px;padding:26px 14px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center;background:#0d0c11">
+            <div style="width:54px;height:54px;display:flex;align-items:center;justify-content:center" dangerouslySetInnerHTML="{{ s.icon }}"></div>
+            <div style="font-weight:800;font-size:13px;letter-spacing:1px;line-height:1.3">{{ s.title }}</div>
+            <div style="font-size:12px;line-height:1.55;color:rgba(236,231,218,.62)">{{ s.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LEAD MAGNET ============ -->
+  <div data-screen-label="Lead magnet" style="background:#0d0c11;border-top:1px solid rgba(236,231,218,.08);border-bottom:1px solid rgba(236,231,218,.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:58px 28px;display:grid;grid-template-columns:280px minmax(0,1fr) minmax(150px,200px);gap:34px;align-items:center">
+      <div style="justify-self:center;position:relative;width:216px;height:300px;transform:rotate(-3deg)">
+        <div style="position:absolute;left:10px;top:8px;width:100%;height:100%;background:#050408;border-radius:3px"></div>
+        <div style="position:absolute;left:-9px;top:2px;width:14px;height:296px;background:linear-gradient(90deg,#2a2118,#0e0b08);border-radius:3px 0 0 3px"></div>
+        <div style="position:absolute;inset:0;background:#0e0d13;border-radius:2px;overflow:hidden;box-shadow:16px 18px 30px rgba(0,0,0,.55)">
+          <div style="position:absolute;inset:9px;border:2px solid #fe6700"></div>
+          <div style="position:absolute;left:0;right:0;top:26px;text-align:center;font-family:'Archivo Black',sans-serif;font-size:19px;color:#ece7da">ATTN<span style="color:#fe6700">!</span></div>
+          <div style="position:absolute;left:22px;right:22px;top:96px;text-align:center;font-family:Anton,sans-serif;font-size:29px;line-height:1.12;color:#fe6700;text-transform:uppercase">Growth Strategy Blueprint</div>
+          <canvas id="bp-cv" width="216" height="300" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="color:#fe6700;font-weight:800;font-size:13px;letter-spacing:2.5px">FREE LEAD MAGNET DOWNLOAD</div>
+        <div style="font-family:Anton,sans-serif;font-style:italic;font-size:38px;letter-spacing:1px;line-height:1.12;transform:skewX(-5deg);transform-origin:left">STILL NOT SURE,<br>START HERE FIRST!</div>
+        <div style="font-size:15px;line-height:1.6;color:rgba(236,231,218,.72);max-width:470px">Get our Growth Strategy Blueprint and discover the exact framework we use to help businesses scale.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;max-width:420px">
+          <input placeholder="Enter your email address" style="background:rgba(22,20,26,.9);border:1px solid rgba(214,196,166,.22);border-radius:4px;padding:13px;font-size:13px;color:#ece7da">
+          <div style="background:linear-gradient(180deg,#ff7d1c 0%,#f26202 55%,#dd5602 100%);color:#f8f0e3;text-shadow:0 1px 0 rgba(90,30,0,.4);box-shadow:inset 0 1px 0 rgba(255,200,140,.35),0 2px 8px rgba(0,0,0,.35);text-align:center;padding:13px;border-radius:2px;font-weight:800;font-size:13.5px;letter-spacing:1.5px">DOWNLOAD FREE GUIDE</div>
+        </div>
+        <div style="font-size:11.5px;color:rgba(236,231,218,.55)">🔒 We respect your privacy. No spam. Ever.</div>
+      </div>
+      <sc-if value="{{ showAnnotation }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative;font-family:Caveat,cursive;font-weight:600;font-size:25px;line-height:1.2;color:#fe6700;transform:rotate(-2deg)">
+          <svg width="52" height="44" viewBox="0 0 52 44" style="position:absolute;left:-56px;top:26px"><path d="M48 4 C20 8 10 20 8 38 M8 38 l-5 -10 M8 38 l11 -3" fill="none" stroke="#fe6700" stroke-width="2.2" stroke-linecap="round"></path></svg>
+          A step-by-step blueprint to help you grow with clarity and confidence.
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <div data-screen-label="Testimonials" style="background:#08070a">
+    <div style="max-width:1180px;margin:0 auto;padding:54px 28px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="flex:1;height:1px;background:rgba(236,231,218,.12)"></div>
+        <div style="font-family:Anton,sans-serif;font-style:italic;font-size:30px;letter-spacing:1px;transform:skewX(-5deg)">WHAT OUR <span style="color:#fe6700">CLIENTS</span> SAY</div>
+        <div style="flex:1;height:1px;background:rgba(236,231,218,.12)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
+          <div style="border:1px solid rgba(214,196,166,.2);border-radius:3px;padding:12px 14px 16px;display:flex;flex-direction:column;gap:11px;background:#0d0c11">
+            <div style="position:relative;height:180px;border-radius:5px;overflow:hidden;background:linear-gradient(165deg,#241f1a 0%,#141117 55%,#0c0a0f 100%)">
+              <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(200,160,110,.18),transparent 60%)"></div>
+              <div style="position:absolute;top:8px;left:8px;font-family:'Share Tech Mono',monospace;font-size:8.5px;letter-spacing:1px;color:rgba(236,231,218,.5);border:1px dashed rgba(236,231,218,.3);padding:2px 6px">CLIENT VIDEO — TO BE SUPPLIED</div>
+              <div style="position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;border:2px solid rgba(255,255,255,.85);background:rgba(8,7,10,.4);display:flex;align-items:center;justify-content:center"><div style="border-left:16px solid rgba(255,255,255,.9);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px"></div></div>
+            </div>
+            <div style="color:#fe6700;letter-spacing:4px;text-align:center;font-size:15px">★★★★★</div>
+            <div style="font-size:12.5px;line-height:1.6;color:rgba(236,231,218,.82);text-align:center">"{{ tm.quote }}"</div>
+            <div style="text-align:center;font-size:11.5px;letter-spacing:1px"><span style="color:#fe6700;font-weight:800">– {{ tm.name }}</span><span style="color:rgba(236,231,218,.7);font-weight:600">, {{ tm.role }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <div style="width:8px;height:8px;border-radius:50%;background:rgba(236,231,218,.3)"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#fe6700"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:rgba(236,231,218,.3)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BIO ============ -->
+  <div data-screen-label="Bio" style="background:#0d0c11;border-top:1px solid rgba(236,231,218,.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 28px;display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:center">
+      <div style="justify-self:center;position:relative;transform:rotate(-2deg);background:#17151c;padding:12px 12px 16px;box-shadow:10px 12px 26px rgba(0,0,0,.5)">
+        <div style="position:absolute;top:-13px;left:-18px;width:86px;height:30px;background:rgba(210,178,130,.45);transform:rotate(-38deg)"></div>
+        <div style="position:absolute;top:-13px;right:-18px;width:86px;height:30px;background:rgba(210,178,130,.45);transform:rotate(38deg)"></div>
+        <div style="position:absolute;bottom:-11px;left:-16px;width:76px;height:26px;background:rgba(210,178,130,.4);transform:rotate(34deg)"></div>
+        <div style="width:266px;height:300px;background:linear-gradient(155deg,#57565a,#2c2b31);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+          <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(236,231,218,.7);letter-spacing:1px">SLOT 2 — WILL PORTRAIT</div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:9.5px;color:rgba(236,231,218,.45)">B&amp;W photo to be supplied</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Anton,sans-serif;font-style:italic;font-size:36px;letter-spacing:1px;transform:skewX(-5deg);transform-origin:left">WHO IS <span style="color:#fe6700">WILL GILES</span>?</div>
+        <div style="font-size:15px;line-height:1.6;color:rgba(236,231,218,.72);max-width:540px">Will Giles is a growth marketing strategist helping brands turn bold ideas into measurable results.</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:4px">
+          <sc-for list="{{ bioPoints }}" as="bp" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="width:40px;height:40px;display:flex;align-items:center;justify-content:center" dangerouslySetInnerHTML="{{ bp.icon }}"></div>
+              <div style="font-weight:800;font-size:11.5px;letter-spacing:.5px;line-height:1.3">{{ bp.title }}</div>
+              <div style="font-size:11px;line-height:1.5;color:rgba(236,231,218,.6)">{{ bp.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:22px;align-items:center;margin-top:6px;flex-wrap:wrap">
+          <div style="font-family:Caveat,cursive;font-weight:600;font-size:22px;color:#fe6700;transform:rotate(-2deg)">Let's build what's next ⟶</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="background:linear-gradient(180deg,#ff7d1c 0%,#f26202 55%,#dd5602 100%);color:#f8f0e3;text-shadow:0 1px 0 rgba(90,30,0,.4);box-shadow:inset 0 1px 0 rgba(255,200,140,.35),0 2px 8px rgba(0,0,0,.35);padding:13px 26px;border-radius:2px;font-weight:800;font-size:13px;letter-spacing:1.5px">BOOK MY FREE CALL</div>
+            <div style="font-size:10.5px;color:rgba(236,231,218,.5)">🔒 We respect your privacy. No spam. Ever.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- print-layer overlays: film grain, halftone screen, warm vignette -->
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:58;opacity:.045;background-image:radial-gradient(rgba(236,225,200,.95) 1px, transparent 1.4px);background-size:5px 5px"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:59;opacity:.5;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22220%22 height=%22220%22 filter=%22url(%23n)%22 opacity=%220.6%22/></svg>')"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:60;background:radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0) 52%, rgba(6,4,2,.42) 100%)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:61;mix-blend-mode:soft-light;background:linear-gradient(160deg, rgba(224,178,120,.14), rgba(60,70,110,.12) 55%, rgba(224,150,80,.12))"></div>
+
+  <!-- ============ FINAL CTA on the road ============ -->
+  <div data-screen-label="Final CTA" style="position:relative;overflow:hidden;border-top:1px solid rgba(236,231,218,.08)">
+    <canvas id="cta-cv" width="1440" height="430" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></canvas>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:52px 28px 20px;display:flex;flex-direction:column;gap:16px">
+      <div style="text-align:center;font-family:Anton,sans-serif;font-style:italic;font-size:38px;letter-spacing:1px;transform:skewX(-5deg)">LET'S BUILD <span style="background:linear-gradient(180deg,#ffe9b0 0%,#F1B84B 32%,#c86f0a 50%,#ffd98a 58%,#fe6700 80%,#7e3a04 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px rgba(60,22,2,.5)">WHAT'S NEXT.</span></div>
+      <div style="text-align:center;font-weight:800;font-size:15px;letter-spacing:2px">BOOK YOUR FREE STRATEGY CALL</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1.2fr;gap:10px;margin-top:6px">
+        <input placeholder="Full Name" style="background:rgba(16,14,18,.85);border:1px solid rgba(236,231,218,.25);border-radius:4px;padding:13px;color:#ece7da;font-size:13px">
+        <input placeholder="Email Address" style="background:rgba(16,14,18,.85);border:1px solid rgba(236,231,218,.25);border-radius:4px;padding:13px;color:#ece7da;font-size:13px">
+        <input placeholder="Phone Number" style="background:rgba(16,14,18,.85);border:1px solid rgba(236,231,218,.25);border-radius:4px;padding:13px;color:#ece7da;font-size:13px">
+        <select style="background:rgba(16,14,18,.85);border:1px solid rgba(236,231,218,.25);border-radius:4px;padding:13px;color:#7d7869;font-size:13px"><option>Monthly Revenue</option><option>&lt; $10k</option><option>$10k – $50k</option><option>$50k – $200k</option><option>$200k+</option></select>
+        <div style="background:linear-gradient(180deg,#ff7d1c 0%,#f26202 55%,#dd5602 100%);color:#f8f0e3;text-shadow:0 1px 0 rgba(90,30,0,.4);box-shadow:inset 0 1px 0 rgba(255,200,140,.35),0 2px 8px rgba(0,0,0,.35);text-align:center;padding:13px;border-radius:2px;font-weight:800;font-size:13px;letter-spacing:1.5px;display:flex;align-items:center;justify-content:center">BOOK MY FREE CALL</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center">
+        <input placeholder="What are you looking to achieve?" style="background:rgba(16,14,18,.85);border:1px solid rgba(236,231,218,.25);border-radius:4px;padding:13px;color:#ece7da;font-size:13px">
+        <div style="font-size:11px;color:rgba(236,231,218,.6)">🔒 We respect your privacy. No spam. Ever.</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;padding:26px 0 6px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:-0.02em">ATTN<span style="color:#fe6700">!</span></div>
+          <div style="font-size:8.5px;font-weight:700;letter-spacing:1.5px;color:rgba(236,231,218,.5);line-height:1.45">GROWTH MARKETING<br>FOR THE FUTURE</div>
+        </div>
+        <div style="font-family:Caveat,cursive;font-weight:600;font-size:19px;color:#fe6700;transform:rotate(-2deg)">Where analog roots meet digital future ⚙</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLightning&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showAnnotation&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Lead magnet&quot;}}">
+class Component extends DCLogic {
+  svg(paths, size) {
+    const s = size || 44;
+    return { __html: '<svg width="' + s + '" height="' + s + '" viewBox="0 0 48 48" fill="none" stroke="#fe6700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + paths + '</svg>' };
+  }
+  renderVals() {
+    const sv = (p, s) => this.svg(p, s);
+    return {
+      showAnnotation: this.props.showAnnotation ?? true,
+      pains: [
+        { icon: sv('<circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/>'), title: 'LACK OF TIME', sub: 'Not enough hours in the day to focus on growth.' },
+        { icon: sv('<circle cx="17" cy="18" r="5.5"/><circle cx="31" cy="18" r="5.5"/><path d="M7 37c1.5-6 5-9 10-9s8.5 3 10 9M28 29c4.5.4 7.5 3.2 9 8"/>'), title: 'INCONSISTENT LEADS', sub: 'Unpredictable lead flow that makes planning impossible.' },
+        { icon: sv('<path d="M24 8l13 5v10c0 9-5.5 14.5-13 17-7.5-2.5-13-8-13-17V13z"/><path d="M18 24l4.5 4.5L31 20"/>'), title: 'LOW TRUST & VISIBILITY', sub: 'Struggling to stand out and build trust in a crowded market.' },
+        { icon: sv('<path d="M9 39h32"/><rect x="12" y="26" width="6" height="10"/><rect x="22" y="18" width="6" height="18"/><rect x="32" y="10" width="6" height="26"/>'), title: 'POOR ROI', sub: 'Marketing spend without measurable results or return.' },
+        { icon: sv('<circle cx="24" cy="24" r="17"/><path d="M19 19c0-3 2.2-5 5-5s5 1.8 5 4.6c0 4-5 4.2-5 8"/><circle cx="24" cy="33" r="1" fill="#fe6700"/>'), title: 'UNCLEAR STRATEGY', sub: 'No clear plan or direction to scale with confidence and consistency.' },
+      ],
+      brands: [
+        { name: 'BRAND ONE', icon: sv('<path d="M24 7l14 24H10z"/><path d="M24 15l8.5 14h-17z"/>') },
+        { name: 'BRAND TWO', icon: sv('<rect x="10" y="10" width="28" height="28" transform="rotate(45 24 24)"/><path d="M24 14l10 10-10 10-10-10z"/>') },
+        { name: 'BRAND THREE', icon: sv('<circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="7"/><path d="M24 9v6M24 33v6M9 24h6M33 24h6"/>') },
+        { name: 'BRAND FOUR', icon: sv('<circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="15" transform="scale(1 .55) translate(0 20)"/>') },
+        { name: 'BRAND FIVE', icon: sv('<path d="M12 16l12-7 12 7v16l-12 7-12-7z"/><path d="M12 16l12 7 12-7M24 23v16"/>') },
+        { name: 'BRAND SIX', icon: sv('<rect x="11" y="11" width="26" height="26" transform="rotate(45 24 24)"/><circle cx="24" cy="24" r="5"/>') },
+        { name: 'BRAND SEVEN', icon: sv('<path d="M24 8v32M8 24h32M14 14l20 20M34 14L14 34"/>') },
+        { name: 'BRAND EIGHT', icon: sv('<circle cx="24" cy="24" r="15"/><path d="M24 9a15 15 0 010 30M24 14a10 10 0 000 20"/>') },
+        { name: 'BRAND NINE', icon: sv('<path d="M10 34c3-12 8-18 14-18s11 6 14 18z"/><circle cx="24" cy="13" r="4"/>') },
+        { name: 'BRAND TEN', icon: sv('<rect x="12" y="12" width="24" height="24" transform="rotate(45 24 24)"/><rect x="18" y="18" width="12" height="12" transform="rotate(45 24 24)"/>') },
+      ],
+      services: [
+        { icon: sv('<circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2" fill="#fe6700"/><path d="M35 13l6-6M38 7l3 0 0 3"/>', 50), title: 'PAID MEDIA', sub: 'Meta Ads, Google Ads & YouTube to drive quality traffic.' },
+        { icon: sv('<path d="M14 22h6v16h-6zM20 24l7-13c2 0 3.5 1.5 3.5 3.5L29 21h8c2 0 3.5 1.8 3 3.8l-2.5 10c-.4 1.9-2 3.2-4 3.2H20"/>', 50), title: 'SOCIAL MEDIA', sub: 'Content, community & brand storytelling that builds trust.' },
+        { icon: sv('<rect x="8" y="10" width="32" height="26" rx="2"/><path d="M8 17h32M12 13.5h3M17 13.5h3"/><path d="M14 24h8M14 29h12"/>', 50), title: 'WEBSITES & LANDING PAGES', sub: 'Conversion-focused design & development.' },
+        { icon: sv('<rect x="8" y="12" width="32" height="24" rx="2"/><path d="M8 14l16 12 16-12"/>', 50), title: 'EMAIL MARKETING', sub: 'Automation, EDMs & nurturing flows that convert.' },
+        { icon: sv('<rect x="12" y="16" width="24" height="18" rx="3"/><circle cx="19" cy="24" r="2" fill="#fe6700"/><circle cx="29" cy="24" r="2" fill="#fe6700"/><path d="M19 29.5h10M24 16v-5M24 11h6M8 22v6M40 22v6"/>', 50), title: 'AI & AUTOMATION', sub: 'Smarter systems, less busywork. More growth.' },
+      ],
+      testimonials: [
+        { quote: 'Will and his team transformed our marketing. In 6 months, we saw our leads triple and revenue scale beyond what we thought was possible.', name: 'JAMES', role: 'CO-FOUNDER' },
+        { quote: 'Their strategy, execution and attention to detail is next level. We finally have a system that consistently drives growth.', name: 'SARAH', role: 'CEO' },
+        { quote: 'The best investment we\u2019ve made. Clear strategy, constant communication and massive results.', name: 'MATT', role: 'FOUNDER' },
+      ],
+      bioPoints: [
+        { icon: this.svg('<circle cx="24" cy="24" r="9"/><path d="M24 15V8M24 40v-7M15 24H8M40 24h-7M17.6 17.6l-5-5M35.4 35.4l-5-5M17.6 30.4l-5 5M35.4 12.6l-5 5"/>', 38), title: '15+ YEARS EXPERIENCE', sub: 'Growth marketing across multiple industries' },
+        { icon: this.svg('<circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2" fill="#fe6700"/>', 38), title: 'STRATEGY FIRST', sub: 'Data-led, human-focused, results obsessed' },
+        { icon: this.svg('<path d="M24 8l13 5v10c0 9-5.5 14.5-13 17-7.5-2.5-13-8-13-17V13z"/><path d="M18 24l4.5 4.5L31 20"/>', 38), title: 'REAL WORLD EXPERIENCE', sub: 'From startup hustle to global brands' },
+        { icon: this.svg('<path d="M16 30a8 8 0 118-8M32 18a8 8 0 11-8 8"/>', 38), title: 'PARTNER, NOT SUPPLIER', sub: 'We grow together, long term' },
+      ],
+    };
+  }
+  componentDidMount() { document.fonts.ready.then(() => this.drawAll()); }
+  componentDidUpdate() { this.drawAll(); }
+  rng(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  grain(ctx, w, h, amt) {
+    const c = document.createElement('canvas'); c.width = w >> 1; c.height = h >> 1;
+    const x = c.getContext('2d'); const d = x.createImageData(c.width, c.height);
+    for (let i = 0; i < d.data.length; i += 4) { const v = Math.random() * 255; d.data[i] = d.data[i+1] = d.data[i+2] = v; d.data[i+3] = 255; }
+    x.putImageData(d, 0, 0);
+    ctx.save(); ctx.globalAlpha = amt; ctx.globalCompositeOperation = 'overlay'; ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(c, 0, 0, w, h); ctx.restore();
+  }
+  vignette(ctx, w, h, amt) {
+    const g = ctx.createRadialGradient(w/2, h/2, Math.min(w,h)*0.4, w/2, h/2, Math.max(w,h)*0.75);
+    g.addColorStop(0, 'rgba(4,3,6,0)'); g.addColorStop(1, 'rgba(4,3,6,' + amt + ')');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  }
+  drawAll() { this.drawHero(); this.drawCta(); this.drawBp(); }
+
+  bolt(ctx, R, x0, endY, big, w, hz) {
+    const pts = [[x0, -10]]; let bx = x0, by = -10;
+    while (by < endY) { bx += (R() - 0.5) * 58; by += 20 + R() * 28; pts.push([bx, by]); }
+    const ig = ctx.createRadialGradient(x0, endY * 0.4, 0, x0, endY * 0.4, w * 0.22);
+    ig.addColorStop(0, 'rgba(190,200,235,' + (big ? 0.22 : 0.12) + ')'); ig.addColorStop(1, 'rgba(190,200,235,0)');
+    ctx.fillStyle = ig; ctx.fillRect(0, 0, w, hz);
+    const stroke = (lw, style, blur) => {
+      ctx.save(); ctx.strokeStyle = style; ctx.lineWidth = lw; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if (blur) { ctx.shadowColor = 'rgba(205,215,250,0.95)'; ctx.shadowBlur = blur; }
+      ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); ctx.restore();
+    };
+    stroke(big ? 14 : 9, 'rgba(170,185,240,0.20)', 44);
+    stroke(big ? 4 : 2.6, 'rgba(235,240,255,0.95)', 26);
+    stroke(big ? 1.6 : 1.1, '#ffffff', 0);
+    for (let b = 0; b < (big ? 3 : 2); b++) {
+      const st = pts[2 + b * 2]; if (!st) break;
+      const br = [[st[0], st[1]]]; let x2 = st[0], y2 = st[1];
+      for (let i = 0; i < 4; i++) { x2 += (b % 2 ? 1 : -1) * (12 + R() * 30); y2 += 14 + R() * 24; br.push([x2, y2]); }
+      ctx.save(); ctx.strokeStyle = 'rgba(225,232,255,0.7)'; ctx.lineWidth = 1.3; ctx.shadowColor = 'rgba(205,215,250,0.8)'; ctx.shadowBlur = 12;
+      ctx.beginPath(); br.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); ctx.restore();
+    }
+  }
+
+  roadStreaks(ctx, R, w, hz, h, density) {
+    // horizontal fire streaks racing across the road, both directions
+    for (let i = 0; i < density; i++) {
+      const y = hz + 14 + R() * (h - hz - 20);
+      const t = (y - hz) / (h - hz);
+      const len = 60 + R() * w * 0.36 * (0.35 + t);
+      const x = R() * (w + 300) - 150;
+      const th = 1 + t * 3.2 * R();
+      const g = ctx.createLinearGradient(x, 0, x + len, 0);
+      const warm = R() > 0.35;
+      const col = warm ? '255,140,40' : '255,196,120';
+      g.addColorStop(0, 'rgba(' + col + ',0)');
+      g.addColorStop(0.5, 'rgba(' + col + ',' + (0.10 + R() * 0.4 * t) + ')');
+      g.addColorStop(1, 'rgba(' + col + ',0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(x, y, len, th);
+    }
+  }
+
+  drawHero() {
+    const cv = document.getElementById('hero-cv'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 1440, h = 820; const R = this.rng(88);
+    ctx.clearRect(0, 0, w, h);
+    const hz = h * 0.60;
+    // deep storm sky
+    let g = ctx.createLinearGradient(0, 0, 0, hz);
+    g.addColorStop(0, '#07060b'); g.addColorStop(0.45, '#10121f'); g.addColorStop(0.8, '#1b1a2b'); g.addColorStop(1, '#241a20');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, hz + 2);
+    // cloud billows
+    for (let i = 0; i < 260; i++) {
+      const cx = R() * w, cy = R() * hz, r = 30 + R() * 150, t = R();
+      const col = t < 0.45 ? '14,18,36' : (t < 0.8 ? '58,66,104' : '84,62,72');
+      const cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      cg.addColorStop(0, 'rgba(' + col + ',' + (0.06 + R() * 0.13) + ')'); cg.addColorStop(1, 'rgba(' + col + ',0)');
+      ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(cx, cy, r * 1.5, r * 0.6, 0, 0, 7); ctx.fill();
+    }
+    // warm horizon band
+    g = ctx.createLinearGradient(0, hz - 90, 0, hz);
+    g.addColorStop(0, 'rgba(190,95,30,0)'); g.addColorStop(1, 'rgba(190,95,30,0.30)');
+    ctx.fillStyle = g; ctx.fillRect(0, hz - 90, w, 90);
+    // lightning: big clusters left and right (behind content edges)
+    const lightning = this.props.heroLightning ?? true;
+    if (lightning) {
+      this.bolt(ctx, R, w * 0.055, h * 0.50, true, w, hz);
+      this.bolt(ctx, R, w * 0.135, h * 0.34, false, w, hz);
+      this.bolt(ctx, R, w * 0.90, h * 0.52, true, w, hz);
+      this.bolt(ctx, R, w * 0.965, h * 0.36, false, w, hz);
+      this.bolt(ctx, R, w * 0.30, h * 0.22, false, w, hz);
+    }
+    // road
+    g = ctx.createLinearGradient(0, hz, 0, h);
+    g.addColorStop(0, '#191420'); g.addColorStop(0.3, '#120d12'); g.addColorStop(1, '#0b0709');
+    ctx.fillStyle = g; ctx.fillRect(0, hz, w, h - hz);
+    // warm road wash
+    g = ctx.createRadialGradient(w * 0.42, hz + 30, 0, w * 0.42, hz + 30, w * 0.55);
+    g.addColorStop(0, 'rgba(230,110,25,0.28)'); g.addColorStop(1, 'rgba(230,110,25,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, hz - 30, w, h - hz + 30);
+    this.roadStreaks(ctx, R, w, hz, h, 210);
+    // ---- car: rear 3/4, center-left ----
+    const k = 1.18, CW = 380 * k, cx0 = w * 0.40, gy = h * 0.565;
+    // underglow
+    g = ctx.createRadialGradient(cx0, gy - 10, 0, cx0, gy - 10, CW * 0.85);
+    g.addColorStop(0, 'rgba(254,103,0,0.45)'); g.addColorStop(0.5, 'rgba(210,85,10,0.15)'); g.addColorStop(1, 'rgba(210,85,10,0)');
+    ctx.fillStyle = g; ctx.fillRect(cx0 - CW, gy - 240, CW * 2, 320);
+    // fire trails sweeping outward
+    const trail = (sx, sy, ex, ey, mx, my, seed) => {
+      const r2 = this.rng(seed);
+      const path = () => { ctx.beginPath(); ctx.moveTo(sx, sy); ctx.quadraticCurveTo(mx, my, ex, ey); };
+      ctx.save(); ctx.lineCap = 'round';
+      ctx.shadowColor = 'rgba(254,115,10,0.85)'; ctx.shadowBlur = 32;
+      ctx.strokeStyle = 'rgba(254,103,0,0.32)'; ctx.lineWidth = 26; path(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,150,50,0.75)'; ctx.lineWidth = 11; path(); ctx.stroke();
+      ctx.shadowBlur = 12; ctx.strokeStyle = '#ffe6ba'; ctx.lineWidth = 3.6; path(); ctx.stroke();
+      ctx.shadowBlur = 0; ctx.strokeStyle = '#fff8ea'; ctx.lineWidth = 1.3; path(); ctx.stroke();
+      for (let i = 0; i < 36; i++) {
+        const t = r2(); const px = (1-t)*(1-t)*sx + 2*(1-t)*t*mx + t*t*ex + (r2()-0.5)*26;
+        const py = (1-t)*(1-t)*sy + 2*(1-t)*t*my + t*t*ey + (r2()-0.5)*18;
+        ctx.fillStyle = 'rgba(255,' + (165 + (r2()*70|0)) + ',85,' + (0.2 + r2()*0.5) + ')';
+        ctx.beginPath(); ctx.arc(px, py, 0.7 + r2() * 2, 0, 7); ctx.fill();
+      }
+      ctx.restore();
+    };
+    trail(cx0 - CW*0.22, gy - 2, -60, h * 0.92, cx0 - CW*0.85, gy + 90, 3);
+    trail(cx0 + CW*0.22, gy - 2, w * 0.98, h * 0.98, cx0 + CW*0.95, gy + 100, 9);
+    // ground shadow
+    g = ctx.createRadialGradient(cx0, gy + 2, 0, cx0, gy + 2, CW * 0.6);
+    g.addColorStop(0, 'rgba(0,0,0,0.65)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(cx0, gy + 4, CW * 0.58, 17, 0, 0, 7); ctx.fill();
+    // body
+    ctx.save(); ctx.translate(cx0 - CW / 2, gy); ctx.scale(k, k);
+    ctx.fillStyle = '#0a0a0c';
+    ctx.fillRect(34, -12, 64, 13); ctx.fillRect(282, -12, 64, 13);
+    const P = [[0,-6],[6,-46],[14,-70],[20,-80],[60,-86],[118,-166],[262,-166],[320,-86],[360,-80],[366,-70],[374,-46],[380,-6]];
+    ctx.beginPath(); P.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath();
+    let bg = ctx.createLinearGradient(0, -170, 0, 0);
+    bg.addColorStop(0, '#7e8698'); bg.addColorStop(0.5, '#4c525f'); bg.addColorStop(0.82, '#2d3038'); bg.addColorStop(1, '#1e2026');
+    ctx.fillStyle = bg; ctx.fill();
+    ctx.strokeStyle = 'rgba(20,20,26,0.9)'; ctx.lineWidth = 2.4; ctx.stroke();
+    // rear glass + louvres
+    ctx.beginPath(); ctx.moveTo(66,-88); ctx.lineTo(122,-160); ctx.lineTo(258,-160); ctx.lineTo(314,-88); ctx.closePath();
+    ctx.fillStyle = '#0d1016'; ctx.fill();
+    for (let i = 0; i < 8; i++) {
+      const y = -98 - i * 8; const t = (-y - 88) / 72;
+      const xl = 66 + 56 * t + 7, xr = 314 - 56 * t - 7;
+      ctx.fillStyle = '#454c58'; ctx.fillRect(xl, y - 2.6, xr - xl, 5.2);
+      ctx.fillStyle = 'rgba(150,162,182,0.55)'; ctx.fillRect(xl, y - 2.6, xr - xl, 1.3);
+    }
+    // roofline speaker stacks silhouette (homage, generic)
+    ctx.fillStyle = '#101014';
+    ctx.fillRect(120, -186, 42, 22); ctx.fillRect(218, -186, 42, 22);
+    ctx.strokeStyle = 'rgba(120,130,150,0.4)'; ctx.lineWidth = 1.2;
+    ctx.strokeRect(120, -186, 42, 22); ctx.strokeRect(218, -186, 42, 22);
+    // deck line
+    ctx.strokeStyle = 'rgba(160,170,190,0.5)'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(22, -82); ctx.lineTo(358, -82); ctx.stroke();
+    // bumper
+    ctx.fillStyle = '#15161c'; ctx.fillRect(8, -30, 364, 23);
+    ctx.fillStyle = 'rgba(70,76,88,0.5)';
+    for (let i = 0; i < 5; i++) ctx.fillRect(40 + i * 68, -26, 3, 15);
+    // taillight clusters
+    const cluster = (x) => {
+      ctx.save(); ctx.shadowColor = 'rgba(254,103,0,0.8)'; ctx.shadowBlur = 18;
+      ctx.fillStyle = '#2a0d05'; ctx.fillRect(x, -68, 124, 31);
+      for (let i = 0; i < 3; i++) {
+        const tg = ctx.createLinearGradient(0, -66, 0, -39);
+        tg.addColorStop(0, '#a52c08'); tg.addColorStop(0.55, '#fe6700'); tg.addColorStop(1, '#ffb35c');
+        ctx.fillStyle = tg; ctx.fillRect(x + 4 + i * 40, -64, 36, 23);
+      }
+      ctx.restore();
+    };
+    cluster(28); cluster(228);
+    // plate
+    ctx.fillStyle = '#d6d0be'; ctx.fillRect(162, -62, 56, 26);
+    ctx.strokeStyle = '#202020'; ctx.lineWidth = 1.6; ctx.strokeRect(162, -62, 56, 26);
+    ctx.fillStyle = '#202020'; ctx.font = '13px "Share Tech Mono", monospace'; ctx.textAlign = 'center';
+    ctx.fillText('ATTN-88', 190, -43);
+    // warm lower reflection
+    let rg = ctx.createLinearGradient(0, -36, 0, -4);
+    rg.addColorStop(0, 'rgba(254,103,0,0)'); rg.addColorStop(1, 'rgba(254,103,0,0.30)');
+    ctx.fillStyle = rg; ctx.fillRect(4, -36, 372, 32);
+    // cool rim on roof
+    ctx.save(); ctx.strokeStyle = 'rgba(160,180,225,0.6)'; ctx.lineWidth = 2; ctx.shadowColor = 'rgba(160,180,225,0.55)'; ctx.shadowBlur = 7;
+    ctx.beginPath(); ctx.moveTo(120, -165); ctx.lineTo(260, -165); ctx.stroke();
+    ctx.restore();
+    ctx.fillStyle = '#1e2028';
+    ctx.fillRect(-12, -128, 26, 14); ctx.fillRect(366, -128, 26, 14);
+    ctx.restore();
+    // headlight bloom on louvres
+    for (const hx of [cx0 - CW*0.26, cx0 + CW*0.26]) {
+      g = ctx.createRadialGradient(hx, gy - 62, 0, hx, gy - 62, 85);
+      g.addColorStop(0, 'rgba(254,120,20,0.15)'); g.addColorStop(1, 'rgba(254,120,20,0)');
+      ctx.fillStyle = g; ctx.fillRect(hx - 85, gy - 150, 170, 175);
+    }
+    // darken behind form card (right) and under nav
+    g = ctx.createLinearGradient(w * 0.55, 0, w, 0);
+    g.addColorStop(0, 'rgba(6,5,9,0)'); g.addColorStop(1, 'rgba(6,5,9,0.5)');
+    ctx.fillStyle = g; ctx.fillRect(w * 0.55, 0, w * 0.45, h);
+    g = ctx.createLinearGradient(0, 0, 0, 110);
+    g.addColorStop(0, 'rgba(5,4,8,0.75)'); g.addColorStop(1, 'rgba(5,4,8,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, 110);
+    // bottom fade into next band
+    g = ctx.createLinearGradient(0, h - 90, 0, h);
+    g.addColorStop(0, 'rgba(8,7,10,0)'); g.addColorStop(1, 'rgba(8,7,10,0.95)');
+    ctx.fillStyle = g; ctx.fillRect(0, h - 90, w, 90);
+    this.vignette(ctx, w, h, 0.42);
+    this.grain(ctx, w, h, 0.13);
+  }
+
+  drawCta() {
+    const cv = document.getElementById('cta-cv'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 1440, h = 430; const R = this.rng(21);
+    ctx.clearRect(0, 0, w, h);
+    let g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, '#08070a'); g.addColorStop(0.55, '#0d0a0d'); g.addColorStop(1, '#160e0a');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    const hz = h * 0.30;
+    g = ctx.createLinearGradient(0, hz - 40, 0, hz + 60);
+    g.addColorStop(0, 'rgba(190,95,30,0)'); g.addColorStop(0.6, 'rgba(190,95,30,0.14)'); g.addColorStop(1, 'rgba(190,95,30,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, hz - 40, w, 100);
+    this.roadStreaks(ctx, R, w, hz, h, 130);
+    // twin trails vanishing to horizon center
+    const trail = (side) => {
+      ctx.save(); ctx.lineCap = 'round';
+      const path = () => { ctx.beginPath(); ctx.moveTo(w/2 + side * 12, hz + 4); ctx.quadraticCurveTo(w/2 + side * w*0.16, h * 0.62, w/2 + side * w*0.42, h + 40); };
+      ctx.shadowColor = 'rgba(254,115,10,0.7)'; ctx.shadowBlur = 22;
+      ctx.strokeStyle = 'rgba(254,103,0,0.22)'; ctx.lineWidth = 16; path(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,150,50,0.5)'; ctx.lineWidth = 6; path(); ctx.stroke();
+      ctx.shadowBlur = 8; ctx.strokeStyle = 'rgba(255,230,186,0.75)'; ctx.lineWidth = 2; path(); ctx.stroke();
+      ctx.restore();
+    };
+    trail(-1); trail(1);
+    g = ctx.createLinearGradient(0, 0, 0, 120);
+    g.addColorStop(0, 'rgba(8,7,10,0.95)'); g.addColorStop(1, 'rgba(8,7,10,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, 120);
+    this.vignette(ctx, w, h, 0.4);
+    this.grain(ctx, w, h, 0.13);
+  }
+
+  drawBp() {
+    const cv = document.getElementById('bp-cv'); if (!cv) return;
+    const ctx = cv.getContext('2d'); const w = 216, h = 300;
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(254,103,0,0.18)'; ctx.lineWidth = 0.8;
+    const y0 = h * 0.62;
+    for (let x = 16; x < w - 16; x += 13) { ctx.beginPath(); ctx.moveTo(x, y0); ctx.lineTo(x, h - 16); ctx.stroke(); }
+    for (let y = y0; y < h - 16; y += 13) { ctx.beginPath(); ctx.moveTo(16, y); ctx.lineTo(w - 16, y); ctx.stroke(); }
+    ctx.strokeStyle = 'rgba(254,103,0,0.35)';
+    ctx.beginPath(); ctx.arc(w * 0.33, h * 0.79, 24, 0, 7); ctx.stroke();
+    ctx.beginPath(); ctx.arc(w * 0.33, h * 0.79, 13, 0, 7); ctx.stroke();
+    ctx.strokeRect(w * 0.56, h * 0.72, 54, 38);
+    this.vignette(ctx, w, h, 0.35);
+    this.grain(ctx, w, h, 0.08);
+  }
+}
+</script>
+</body>
+</html>

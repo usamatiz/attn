@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"next dev -p 3201\")",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,140 --screenshot=/private/tmp/claude-501/-Users-techtiz-Desktop-test-next-js/3b046627-ad8a-49de-ad91-b32782b8bc15/scratchpad/header2.png http://localhost:3000)",
+      "Bash(echo \"exit=$?\")",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1520,130 --screenshot=/private/tmp/claude-501/-Users-techtiz-Desktop-test-next-js/3b046627-ad8a-49de-ad91-b32782b8bc15/scratchpad/header3.png http://localhost:3000)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,1400 --screenshot=/private/tmp/claude-501/-Users-techtiz-Desktop-test-next-js/3b046627-ad8a-49de-ad91-b32782b8bc15/scratchpad/feat.png http://localhost:3000)",
+      "Bash(curl -s \"http://localhost:3000/?v=3\")",
+      "Bash(curl -s http://localhost:3000__TRACKED_VAR__)",
+      "Bash(python3 -c 'import sys,re;c=sys.stdin.read\\(\\);m=re.search\\(r'\\\\''\\(?:^|[},]\\)\\\\s*\\\\.founder-section h2\\\\s*\\\\{\\([^}]*\\)\\\\}'\\\\'',c\\);print\\('\\\\''founder h2:'\\\\'',\\(m.group\\(1\\) if m else '\\\\''NF'\\\\''\\).replace\\(chr\\(10\\),'\\\\'' '\\\\''\\)\\) *)",
+      "Bash(awk '{print $2, $11, $12, $13, $14}')",
+      "Bash(kill 2730 2735)",
+      "Bash(echo \"started pid $!\")",
+      "Bash(python3 -c 'import sys,re;c=sys.stdin.read\\(\\); *)"
+    ]
+  }
+}

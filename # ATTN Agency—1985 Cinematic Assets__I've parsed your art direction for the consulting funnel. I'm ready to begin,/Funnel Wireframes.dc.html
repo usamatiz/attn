@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f0eee9;font-family:system-ui,sans-serif}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+/* wireframe utilities */
+.sec{padding:14px 16px;border-bottom:1px dashed rgba(0,0,0,.18);display:flex;flex-direction:column;gap:8px}
+.stub{height:8px;background:#d9d9d9;border-radius:4px}
+.stub.b{height:14px;background:#2a2a2a}
+.stub.o{background:#fe6700}
+.xbox{border:1.5px solid #555;background:#fafafa;background-image:linear-gradient(to top right,transparent calc(50% - .8px),#bbb calc(50% - .8px),#bbb calc(50% + .8px),transparent calc(50% + .8px)),linear-gradient(to bottom right,transparent calc(50% - .8px),#bbb calc(50% - .8px),#bbb calc(50% + .8px),transparent calc(50% + .8px));position:relative}
+.tag{position:absolute;top:6px;left:6px;font:11px 'Share Tech Mono',monospace;background:#fe6700;color:#fff;padding:2px 6px;letter-spacing:.5px}
+.note{font:13px 'Permanent Marker',cursive;color:#c65200;line-height:1.3}
+.mono{font:10px 'Share Tech Mono',monospace;color:#888}
+.inp{height:26px;border:1.5px solid #999;border-radius:3px;background:#fff}
+.btn{height:30px;background:#fe6700;border-radius:3px;display:flex;align-items:center;justify-content:center;font:12px 'Share Tech Mono',monospace;color:#fff;letter-spacing:1px}
+.ic{width:34px;height:34px;border:1.5px solid #555;border-radius:50%;margin:0 auto}
+.logo{height:30px;flex:1;border:1px dashed #999;background:#f2f2f2}
+.play{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px 0 0 -19px;border:2px solid #555;border-radius:50%}
+.play:after{content:"";position:absolute;left:14px;top:10px;border-left:12px solid #555;border-top:8px solid transparent;border-bottom:8px solid transparent}
+.hdr{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1.5px solid #2a2a2a}
+.ham{width:22px;height:2.5px;background:#2a2a2a;box-shadow:0 6px 0 #2a2a2a,0 12px 0 #2a2a2a;margin-bottom:12px}
+.wordmark{font:700 16px system-ui;color:#1a1a1a}.wordmark span{color:#fe6700}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t2">
+  <div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Rebuilt to v3 mock — dark/light bands, hero form right, 5 pains, testimonials in structure. Supersedes <a class="dv-oid" href="#1a">1a</a>/<a class="dv-oid" href="#1b">1b</a></span></div>
+  <div class="dv-opts">
+
+    <!-- 2b DESKTOP -->
+    <div class="dv-opt" id="2b">
+      <div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Desktop · v3 structure</div>
+      <div class="dv-card" style="width:860px">
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 22px;background:#1c1c1c">
+          <span class="wordmark" style="color:#fff">ATTN<span>!</span></span>
+          <div style="display:flex;gap:16px;align-items:center;font:600 9px system-ui;color:#ccc;letter-spacing:1px">
+            <span>ABOUT</span><span>SERVICES</span><span>RESULTS</span><span>RESOURCES</span>
+            <span class="btn" style="height:24px;padding:0 12px;font-size:9px">BOOK STRATEGY CALL</span>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:20px;padding:22px;background:#1c1c1c">
+          <div style="flex:1.3;display:flex;flex-direction:column;gap:10px">
+            <div style="font:800 italic 30px/1.05 system-ui;color:#fff">BACK<br>TO THE <span style="color:#fe6700">FUTURE</span></div>
+            <div style="font:800 italic 15px system-ui;color:#fff">YOUR BUSINESS. OUR MISSION.</div>
+            <div class="xbox" style="height:190px;background:#101010"><span class="tag">SLOT 1</span><div class="play" style="border-color:#aaa"></div></div>
+            <div class="stub" style="width:90%;background:#4a4a4a"></div>
+            <div class="stub" style="width:75%;background:#4a4a4a"></div>
+            <div class="stub o" style="width:30%"></div>
+          </div>
+          <div style="flex:1;border:1.5px solid #555;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:8px;background:#161616">
+            <div style="font:800 13px system-ui;color:#fff">BOOK YOUR <span style="color:#fe6700">FREE</span> STRATEGY CALL</div>
+            <div class="stub" style="width:50%;background:#4a4a4a"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="inp" style="background:#222;border-color:#666"></div><div class="inp" style="background:#222;border-color:#666"></div></div>
+            <div class="inp" style="background:#222;border-color:#666"></div>
+            <div class="inp" style="background:#222;border-color:#666"></div>
+            <div class="inp" style="height:44px;background:#222;border-color:#666"></div>
+            <div class="btn">BOOK MY FREE CALL</div>
+            <div class="mono" style="text-align:center;color:#888">🔒 privacy · no spam</div>
+          </div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:10px;align-items:center;justify-content:center">
+          <div class="mono" style="flex:none;color:#555">AS FEATURED IN</div>
+          <div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div>
+          <div class="note" style="flex:none">SLOT 4</div>
+        </div>
+
+        <div style="padding:20px 22px;background:#1c1c1c;display:flex;flex-direction:column;gap:14px">
+          <div style="font:800 15px system-ui;color:#fff;text-align:center">AS A BUSINESS OWNER, DO YOU <span style="color:#fe6700">STRUGGLE</span> WITH...</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0">
+            <div style="border-right:1px solid #3a3a3a;padding:0 10px;text-align:center"><div class="ic" style="border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:6px;letter-spacing:.5px">LACK OF TIME</div><div class="stub" style="width:80%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border-right:1px solid #3a3a3a;padding:0 10px;text-align:center"><div class="ic" style="border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:6px;letter-spacing:.5px">INCONSISTENT LEADS</div><div class="stub" style="width:80%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border-right:1px solid #3a3a3a;padding:0 10px;text-align:center"><div class="ic" style="border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:6px;letter-spacing:.5px">LOW TRUST &amp; VISIBILITY</div><div class="stub" style="width:80%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border-right:1px solid #3a3a3a;padding:0 10px;text-align:center"><div class="ic" style="border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:6px;letter-spacing:.5px">POOR ROI</div><div class="stub" style="width:80%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="padding:0 10px;text-align:center"><div class="ic" style="border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:6px;letter-spacing:.5px">UNCLEAR STRATEGY</div><div class="stub" style="width:80%;margin:6px auto 0;background:#4a4a4a"></div></div>
+          </div>
+          <div style="text-align:center"><span style="font:800 12px system-ui;color:#fff;border-bottom:3px solid #fe6700;padding-bottom:3px">You're not alone.</span></div>
+        </div>
+
+        <div class="sec" style="text-align:center;position:relative">
+          <div class="stub b" style="width:50%;margin:0 auto"></div>
+          <div class="stub b" style="width:64%;margin:0 auto"></div>
+          <div style="font:44px 'Permanent Marker',cursive;color:#fe6700">$250M+</div>
+          <div class="mono">IN COMBINED REVENUE — pending verification</div>
+          <div style="display:flex;gap:8px;margin-top:6px">
+            <div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div><div class="logo" style="height:52px"></div>
+          </div>
+          <div class="note" style="text-align:left">SLOT 5 — now ×8 marks w/ icon + name lockups</div>
+        </div>
+
+        <div style="padding:20px 22px;background:#1c1c1c;display:flex;flex-direction:column;gap:14px">
+          <div style="font:800 15px system-ui;color:#fff;text-align:center">HERE'S HOW WE CAN <span style="color:#fe6700">HELP YOU</span></div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+            <div style="border:1px solid #3f3f3f;padding:12px 8px;text-align:center"><div class="ic" style="width:30px;height:30px;border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:7px">PAID MEDIA</div><div class="stub" style="width:85%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border:1px solid #3f3f3f;padding:12px 8px;text-align:center"><div class="ic" style="width:30px;height:30px;border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:7px">SOCIAL MEDIA</div><div class="stub" style="width:85%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border:1px solid #3f3f3f;padding:12px 8px;text-align:center"><div class="ic" style="width:30px;height:30px;border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:7px">WEBSITES &amp; LANDING PAGES</div><div class="stub" style="width:85%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border:1px solid #3f3f3f;padding:12px 8px;text-align:center"><div class="ic" style="width:30px;height:30px;border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:7px">EMAIL MARKETING</div><div class="stub" style="width:85%;margin:6px auto 0;background:#4a4a4a"></div></div>
+            <div style="border:1px solid #3f3f3f;padding:12px 8px;text-align:center"><div class="ic" style="width:30px;height:30px;border-color:#fe6700"></div><div style="font:700 8.5px system-ui;color:#fff;margin-top:7px">AI &amp; AUTOMATION</div><div class="stub" style="width:85%;margin:6px auto 0;background:#4a4a4a"></div></div>
+          </div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:20px;align-items:center;position:relative">
+          <div class="xbox" style="width:150px;height:190px;flex:none;transform:rotate(-3deg);box-shadow:5px 5px 0 rgba(0,0,0,.15)"><span class="tag">SLOT 3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+            <div class="stub o" style="width:32%;height:10px"></div>
+            <div style="font:800 16px system-ui;color:#1a1a1a">STILL NOT SURE, START HERE FIRST!</div>
+            <div class="stub" style="width:88%"></div><div class="stub" style="width:64%"></div>
+            <div style="display:flex;gap:8px"><div class="inp" style="flex:1"></div><div class="btn" style="width:170px;font-size:10px">DOWNLOAD FREE GUIDE</div></div>
+            <div class="mono">🔒 privacy · no spam</div>
+          </div>
+          <div style="width:150px;flex:none;font:14px 'Permanent Marker',cursive;color:#fe6700;transform:rotate(-2deg)">A step-by-step blueprint to grow with clarity and confidence. ↙</div>
+        </div>
+
+        <div style="padding:20px 22px;background:#1c1c1c;display:flex;flex-direction:column;gap:14px">
+          <div style="font:800 15px system-ui;color:#fff;text-align:center">WHAT OUR CLIENTS SAY</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+            <div style="border:1px solid #3f3f3f;padding:10px;display:flex;flex-direction:column;gap:8px"><div class="xbox" style="height:100px;background:#101010"><span class="tag">VIDEO</span><div class="play" style="border-color:#aaa;width:28px;height:28px;margin:-14px 0 0 -14px"></div></div><div style="color:#fe6700;font-size:11px;letter-spacing:2px;text-align:center">★★★★★</div><div class="stub" style="width:95%;background:#4a4a4a"></div><div class="stub" style="width:80%;background:#4a4a4a"></div><div style="font:700 8px system-ui;color:#fe6700;text-align:center">— NAME, ROLE</div></div>
+            <div style="border:1px solid #3f3f3f;padding:10px;display:flex;flex-direction:column;gap:8px"><div class="xbox" style="height:100px;background:#101010"><span class="tag">VIDEO</span><div class="play" style="border-color:#aaa;width:28px;height:28px;margin:-14px 0 0 -14px"></div></div><div style="color:#fe6700;font-size:11px;letter-spacing:2px;text-align:center">★★★★★</div><div class="stub" style="width:95%;background:#4a4a4a"></div><div class="stub" style="width:80%;background:#4a4a4a"></div><div style="font:700 8px system-ui;color:#fe6700;text-align:center">— NAME, ROLE</div></div>
+            <div style="border:1px solid #3f3f3f;padding:10px;display:flex;flex-direction:column;gap:8px"><div class="xbox" style="height:100px;background:#101010"><span class="tag">VIDEO</span><div class="play" style="border-color:#aaa;width:28px;height:28px;margin:-14px 0 0 -14px"></div></div><div style="color:#fe6700;font-size:11px;letter-spacing:2px;text-align:center">★★★★★</div><div class="stub" style="width:95%;background:#4a4a4a"></div><div class="stub" style="width:80%;background:#4a4a4a"></div><div style="font:700 8px system-ui;color:#fe6700;text-align:center">— NAME, ROLE</div></div>
+          </div>
+          <div style="display:flex;gap:6px;justify-content:center"><div style="width:8px;height:8px;border-radius:50%;background:#fe6700"></div><div style="width:8px;height:8px;border-radius:50%;background:#555"></div><div style="width:8px;height:8px;border-radius:50%;background:#555"></div></div>
+          <div class="note">client videos + permissions required · poster frames graded to palette</div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:20px;align-items:flex-start">
+          <div class="xbox" style="width:160px;height:190px;flex:none;transform:rotate(-2deg);box-shadow:4px 4px 0 rgba(0,0,0,.12)"><span class="tag">SLOT 2</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:9px">
+            <div style="font:800 16px system-ui;color:#1a1a1a">WHO IS <span style="color:#fe6700">WILL GILES</span>?</div>
+            <div class="stub" style="width:92%"></div><div class="stub" style="width:78%"></div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:4px">
+              <div><div class="ic" style="width:24px;height:24px;border-color:#fe6700;margin:0"></div><div class="stub" style="width:90%;margin-top:6px"></div></div>
+              <div><div class="ic" style="width:24px;height:24px;border-color:#fe6700;margin:0"></div><div class="stub" style="width:90%;margin-top:6px"></div></div>
+              <div><div class="ic" style="width:24px;height:24px;border-color:#fe6700;margin:0"></div><div class="stub" style="width:90%;margin-top:6px"></div></div>
+              <div><div class="ic" style="width:24px;height:24px;border-color:#fe6700;margin:0"></div><div class="stub" style="width:90%;margin-top:6px"></div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;margin-top:4px">
+              <div class="btn" style="width:150px;font-size:10px">BOOK MY FREE CALL</div>
+              <div style="font:italic 600 11px system-ui;color:#fe6700">Let's build what's next ⟶</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 22px;background:#1c1c1c">
+          <div style="display:flex;gap:10px;align-items:center"><span class="wordmark" style="color:#fff;font-size:13px">ATTN<span>!</span></span><span style="font:600 7px system-ui;color:#888;letter-spacing:1px">GROWTH MARKETING<br>FOR THE FUTURE</span></div>
+          <div style="display:flex;gap:8px"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#888"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#888"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#888"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#888"></div></div>
+          <div style="font:600 8px system-ui;color:#888;letter-spacing:1px;text-align:right">WHERE ANALOG ROOTS<br>MEET DIGITAL GROWTH.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2a MOBILE -->
+    <div class="dv-opt" id="2a">
+      <div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Mobile · v3 structure</div>
+      <div class="dv-card" style="width:390px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#1c1c1c">
+          <span class="wordmark" style="color:#fff">ATTN<span>!</span></span><div class="ham" style="background:#ccc;box-shadow:0 6px 0 #ccc,0 12px 0 #ccc"></div>
+        </div>
+        <div style="padding:16px;background:#1c1c1c;display:flex;flex-direction:column;gap:10px">
+          <div style="font:800 italic 26px/1.05 system-ui;color:#fff">BACK TO<br>THE <span style="color:#fe6700">FUTURE</span></div>
+          <div style="font:800 italic 13px system-ui;color:#fff">YOUR BUSINESS. OUR MISSION.</div>
+          <div class="xbox" style="height:180px;background:#101010"><span class="tag">SLOT 1</span><div class="play" style="border-color:#aaa"></div></div>
+          <div class="stub" style="width:92%;background:#4a4a4a"></div>
+          <div class="stub" style="width:76%;background:#4a4a4a"></div>
+          <div class="stub o" style="width:34%"></div>
+        </div>
+        <div class="sec" style="background:#f7f7f7">
+          <div style="font:800 13px system-ui;color:#1a1a1a;text-align:center">BOOK YOUR <span style="color:#fe6700">FREE</span> STRATEGY CALL</div>
+          <div class="inp"></div><div class="inp"></div><div class="inp"></div><div class="inp"></div><div class="inp"></div>
+          <div class="btn">BOOK MY FREE CALL</div>
+          <div class="mono" style="text-align:center">🔒 privacy · no spam</div>
+        </div>
+        <div class="sec">
+          <div class="mono" style="text-align:center;color:#555">AS FEATURED IN</div>
+          <div style="display:flex;gap:6px"><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div></div>
+          <div class="note">SLOT 4</div>
+        </div>
+        <div style="padding:16px;background:#1c1c1c;display:flex;flex-direction:column;gap:10px">
+          <div style="font:800 13px system-ui;color:#fff;text-align:center">AS A BUSINESS OWNER,<br>DO YOU <span style="color:#fe6700">STRUGGLE</span> WITH...</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+            <div style="display:flex;gap:10px;align-items:center"><div class="ic" style="width:22px;height:22px;margin:0;border-color:#fe6700"></div><div style="font:700 10px system-ui;color:#fff;letter-spacing:.5px">LACK OF TIME</div></div>
+            <div style="display:flex;gap:10px;align-items:center"><div class="ic" style="width:22px;height:22px;margin:0;border-color:#fe6700"></div><div style="font:700 10px system-ui;color:#fff;letter-spacing:.5px">INCONSISTENT LEADS</div></div>
+            <div style="display:flex;gap:10px;align-items:center"><div class="ic" style="width:22px;height:22px;margin:0;border-color:#fe6700"></div><div style="font:700 10px system-ui;color:#fff;letter-spacing:.5px">LOW TRUST &amp; VISIBILITY</div></div>
+            <div style="display:flex;gap:10px;align-items:center"><div class="ic" style="width:22px;height:22px;margin:0;border-color:#fe6700"></div><div style="font:700 10px system-ui;color:#fff;letter-spacing:.5px">POOR ROI</div></div>
+            <div style="display:flex;gap:10px;align-items:center"><div class="ic" style="width:22px;height:22px;margin:0;border-color:#fe6700"></div><div style="font:700 10px system-ui;color:#fff;letter-spacing:.5px">UNCLEAR STRATEGY</div></div>
+          </div>
+          <div style="text-align:center"><span style="font:800 11px system-ui;color:#fff;border-bottom:3px solid #fe6700;padding-bottom:2px">You're not alone.</span></div>
+        </div>
+        <div class="sec" style="text-align:center">
+          <div class="stub b" style="width:80%;margin:0 auto"></div>
+          <div style="font:34px 'Permanent Marker',cursive;color:#fe6700">$250M+</div>
+          <div class="mono">pending verification</div>
+          <div style="display:flex;gap:5px"><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div><div class="logo" style="height:36px"></div></div>
+          <div class="note" style="text-align:left">SLOT 5 ×8</div>
+        </div>
+        <div style="padding:16px;background:#1c1c1c;display:flex;flex-direction:column;gap:10px">
+          <div style="font:800 12px system-ui;color:#fff;text-align:center">HERE'S HOW WE CAN <span style="color:#fe6700">HELP YOU</span></div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">
+            <div style="border:1px solid #3f3f3f;padding:8px 4px;text-align:center"><div class="ic" style="width:20px;height:20px;border-color:#fe6700"></div><div style="font:700 6px system-ui;color:#fff;margin-top:5px">PAID MEDIA</div></div>
+            <div style="border:1px solid #3f3f3f;padding:8px 4px;text-align:center"><div class="ic" style="width:20px;height:20px;border-color:#fe6700"></div><div style="font:700 6px system-ui;color:#fff;margin-top:5px">SOCIAL MEDIA</div></div>
+            <div style="border:1px solid #3f3f3f;padding:8px 4px;text-align:center"><div class="ic" style="width:20px;height:20px;border-color:#fe6700"></div><div style="font:700 6px system-ui;color:#fff;margin-top:5px">WEB &amp; LP</div></div>
+            <div style="border:1px solid #3f3f3f;padding:8px 4px;text-align:center"><div class="ic" style="width:20px;height:20px;border-color:#fe6700"></div><div style="font:700 6px system-ui;color:#fff;margin-top:5px">EMAIL</div></div>
+            <div style="border:1px solid #3f3f3f;padding:8px 4px;text-align:center"><div class="ic" style="width:20px;height:20px;border-color:#fe6700"></div><div style="font:700 6px system-ui;color:#fff;margin-top:5px">AI &amp; AUTO</div></div>
+          </div>
+        </div>
+        <div style="padding:16px;background:#161616;display:flex;gap:12px;align-items:center">
+          <div class="xbox" style="width:96px;height:126px;flex:none;transform:rotate(-3deg);background:#101010"><span class="tag" style="font-size:9px">SLOT 3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:7px">
+            <div class="stub o" style="width:52%;height:8px"></div>
+            <div style="font:800 13px system-ui;color:#fff">STILL NOT SURE,<br>START HERE FIRST!</div>
+            <div class="btn" style="height:26px;font-size:9px">DOWNLOAD FREE GUIDE</div>
+          </div>
+        </div>
+        <div style="padding:16px;background:#1c1c1c;display:flex;flex-direction:column;gap:10px">
+          <div style="font:800 12px system-ui;color:#fff;text-align:center">WHAT OUR CLIENTS SAY</div>
+          <div style="border:1px solid #3f3f3f;padding:10px;display:flex;flex-direction:column;gap:8px">
+            <div class="xbox" style="height:140px;background:#101010"><span class="tag">VIDEO</span><div class="play" style="border-color:#aaa"></div></div>
+            <div style="color:#fe6700;font-size:11px;letter-spacing:2px;text-align:center">★★★★★</div>
+            <div class="stub" style="width:95%;background:#4a4a4a"></div><div class="stub" style="width:78%;background:#4a4a4a"></div>
+            <div style="font:700 8px system-ui;color:#fe6700;text-align:center">— NAME, ROLE</div>
+          </div>
+          <div style="display:flex;gap:6px;justify-content:center"><div style="width:7px;height:7px;border-radius:50%;background:#fe6700"></div><div style="width:7px;height:7px;border-radius:50%;background:#555"></div><div style="width:7px;height:7px;border-radius:50%;background:#555"></div><div style="width:7px;height:7px;border-radius:50%;background:#555"></div></div>
+        </div>
+        <div class="sec" style="flex-direction:row;gap:12px;align-items:flex-start">
+          <div class="xbox" style="width:120px;height:140px;flex:none;transform:rotate(-2deg);box-shadow:3px 3px 0 rgba(0,0,0,.12)"><span class="tag" style="font-size:9px">SLOT 2</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:7px">
+            <div style="font:800 12px system-ui;color:#1a1a1a">WHO IS <span style="color:#fe6700">WILL GILES</span>?</div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#fe6700"></div><div class="stub" style="flex:1"></div></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#fe6700"></div><div class="stub" style="flex:1"></div></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#fe6700"></div><div class="stub" style="flex:1"></div></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#fe6700"></div><div class="stub" style="flex:1"></div></div>
+            <div style="font:italic 600 10px system-ui;color:#fe6700;margin-top:2px">Let's build what's next ⟶</div>
+          </div>
+        </div>
+        <div style="padding:16px;background:#1c1c1c;display:flex;flex-direction:column;gap:8px">
+          <div style="font:800 12px system-ui;color:#fe6700;text-align:center">LET'S BUILD WHAT'S NEXT.</div>
+          <div style="font:800 10px system-ui;color:#fff;text-align:center">BOOK YOUR FREE STRATEGY CALL</div>
+          <div class="inp" style="background:#222;border-color:#666"></div><div class="inp" style="background:#222;border-color:#666"></div><div class="inp" style="background:#222;border-color:#666"></div><div class="inp" style="background:#222;border-color:#666"></div>
+          <div class="btn">BOOK MY FREE CALL</div>
+          <div class="mono" style="text-align:center;color:#888">🔒 privacy · no spam</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#111">
+          <span class="wordmark" style="color:#fff;font-size:12px">ATTN<span>!</span></span>
+          <div style="display:flex;gap:8px"><div class="ic" style="width:15px;height:15px;margin:0;border-color:#888"></div><div class="ic" style="width:15px;height:15px;margin:0;border-color:#888"></div><div class="ic" style="width:15px;height:15px;margin:0;border-color:#888"></div><div class="ic" style="width:15px;height:15px;margin:0;border-color:#888"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "hi-fi the hero band of <a class="dv-oid" href="#2b">2b</a>" · "update the build video to the v3 structure" · "light-band variant of the testimonials"</p>
+</section>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">v2.6 funnel as wireframe — image slots mapped (layout locked, structure per mock)</span></div>
+  <div class="dv-opts">
+
+    <!-- 1a MOBILE -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Mobile (per v2.6 mock) · slot callouts in orange</div>
+      <div class="dv-card" style="width:390px">
+        <div class="hdr"><span class="wordmark">ATTN<span>!</span></span><div class="ham"></div></div>
+
+        <div class="sec">
+          <div class="stub b" style="width:85%"></div>
+          <div class="stub b" style="width:60%"></div>
+          <div class="stub o" style="height:14px;width:45%"></div>
+          <div class="xbox" style="height:200px;margin-top:6px"><span class="tag">SLOT 1</span><div class="play"></div></div>
+          <div class="note">hero storm scene — 1120×620, crop-safe centre for mobile · video poster frame</div>
+          <div class="stub" style="width:90%"></div>
+          <div class="stub" style="width:75%"></div>
+        </div>
+
+        <div class="sec" style="background:#f7f7f7">
+          <div class="stub b" style="width:70%;margin:0 auto"></div>
+          <div class="stub" style="width:40%;margin:0 auto"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="inp"></div><div class="inp"></div><div class="inp"></div><div class="inp"></div></div>
+          <div class="inp"></div>
+          <div class="btn">BOOK MY CALL</div>
+          <div class="mono" style="text-align:center">🔒 privacy note</div>
+        </div>
+
+        <div class="sec">
+          <div class="mono" style="text-align:center;color:#555">AS FEATURED IN</div>
+          <div style="display:flex;gap:6px;position:relative;padding-top:2px"><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div></div>
+          <div class="note">SLOT 4 — real publication marks, mono @50% (or section is cut)</div>
+        </div>
+
+        <div class="sec">
+          <div class="stub b" style="width:75%;margin:0 auto"></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:4px">
+            <div><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+          </div>
+          <div class="mono" style="text-align:center;color:#555">pain points ×4 · amber icon strokes</div>
+        </div>
+
+        <div class="sec" style="text-align:center">
+          <div class="stub b" style="width:80%;margin:0 auto"></div>
+          <div style="font:32px 'Permanent Marker',cursive;color:#fe6700">$250M+</div>
+          <div class="mono">proof figure — pending verification (brief §8)</div>
+          <div style="display:flex;gap:6px;margin-top:4px"><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div></div>
+          <div class="note" style="text-align:left">SLOT 5 — client marks, mono, permissions required</div>
+        </div>
+
+        <div class="sec">
+          <div class="stub b" style="width:65%;margin:0 auto"></div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:4px">
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:5px"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:5px"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:5px"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:5px"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:5px"></div></div>
+          </div>
+          <div class="mono" style="text-align:center;color:#555">services ×5</div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:12px;align-items:flex-start">
+          <div class="xbox" style="width:110px;height:150px;flex:none"><span class="tag">SLOT 3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:7px">
+            <div class="stub o" style="width:55%"></div>
+            <div class="stub b" style="width:85%"></div>
+            <div class="stub" style="width:95%"></div>
+            <div class="stub" style="width:70%"></div>
+            <div class="inp"></div>
+            <div class="btn" style="font-size:10px">DOWNLOAD FREE GUIDE</div>
+          </div>
+        </div>
+        <div class="sec" style="border-top:none;padding-top:0"><div class="note">SLOT 3 — blueprint cover 660×900, must read at 240px, shown in tablet frame</div></div>
+
+        <div class="sec">
+          <div class="stub b" style="width:55%;margin:0 auto"></div>
+          <div class="xbox" style="height:170px;margin-top:4px"><span class="tag">VIDEO</span><div class="play"></div></div>
+          <div style="display:flex;gap:6px;justify-content:center"><div class="stub" style="width:20px"></div><div class="stub" style="width:8px"></div><div class="stub" style="width:8px"></div></div>
+          <div class="note">TESTIMONIAL VIDEOS — new section, not in brief §5 · swipe carousel on mobile</div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:12px;align-items:flex-start">
+          <div class="xbox" style="width:130px;height:150px;flex:none;transform:rotate(-2deg);box-shadow:3px 3px 0 rgba(0,0,0,.12)"><span class="tag">SLOT 2</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:7px">
+            <div class="stub b" style="width:70%"></div>
+            <div class="stub" style="width:95%"></div>
+            <div class="stub" style="width:85%"></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+            <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+          </div>
+        </div>
+        <div class="sec" style="border-top:none;padding-top:0"><div class="note">SLOT 2 — Will portrait 600×690, B&amp;W polaroid w/ tape (photo to be supplied)</div></div>
+
+        <div class="sec" style="background:#f7f7f7">
+          <div class="stub b" style="width:60%;margin:0 auto"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="inp"></div><div class="inp"></div><div class="inp"></div><div class="inp"></div></div>
+          <div class="btn">BOOK MY CALL</div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#2a2a2a">
+          <span class="wordmark" style="color:#fff;font-size:12px">ATTN<span>!</span></span>
+          <div style="display:flex;gap:8px"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1b DESKTOP -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Desktop · copy-left hero per brief §5 (slot 1 focus falls off left)</div>
+      <div class="dv-card" style="width:760px">
+        <div class="hdr"><span class="wordmark">ATTN<span>!</span></span><div style="display:flex;gap:14px;align-items:center"><div class="stub" style="width:50px"></div><div class="stub" style="width:50px"></div><div class="stub" style="width:50px"></div><div class="btn" style="width:110px;height:24px;font-size:9px">BOOK A CALL</div></div></div>
+
+        <div class="sec" style="flex-direction:row;gap:18px;align-items:stretch;padding:18px 16px">
+          <div style="width:42%;display:flex;flex-direction:column;gap:9px;justify-content:center">
+            <div class="stub b" style="width:95%"></div>
+            <div class="stub b" style="width:70%"></div>
+            <div class="stub o" style="height:12px;width:50%"></div>
+            <div class="stub" style="width:90%;margin-top:6px"></div>
+            <div class="stub" style="width:80%"></div>
+            <div class="btn" style="width:150px;margin-top:8px;font-size:10px">BOOK MY CALL</div>
+          </div>
+          <div class="xbox" style="flex:1;min-height:230px"><span class="tag">SLOT 1</span><div class="play"></div></div>
+        </div>
+        <div class="sec" style="border-top:none;padding-top:0"><div class="note">SLOT 1 — 1120×620: car sits right-of-centre, focus falls off toward copy (left edge)</div></div>
+
+        <div class="sec" style="flex-direction:row;gap:8px;align-items:center">
+          <div class="mono" style="flex:none;color:#555">AS FEATURED IN</div>
+          <div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div>
+          <div class="note" style="flex:none">SLOT 4</div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:14px">
+          <div style="flex:1"><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+          <div style="flex:1"><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+          <div style="flex:1"><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+          <div style="flex:1"><div class="ic"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:18px;align-items:center">
+          <div style="width:45%;text-align:center">
+            <div class="stub b" style="width:80%;margin:0 auto 8px"></div>
+            <div style="font:40px 'Permanent Marker',cursive;color:#fe6700">$250M+</div>
+            <div class="mono">pending verification</div>
+          </div>
+          <div style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div><div class="logo"></div></div>
+          <div class="note" style="flex:none;width:80px">SLOT 5 client marks</div>
+        </div>
+
+        <div class="sec">
+          <div class="stub b" style="width:35%;margin:0 auto"></div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:4px">
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+            <div><div class="ic" style="width:28px;height:28px"></div><div class="stub" style="margin-top:6px"></div><div class="stub" style="width:70%;margin:4px auto 0"></div></div>
+          </div>
+          <div class="mono" style="text-align:center;color:#555">services ×5</div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:18px;align-items:center;background:#f7f7f7">
+          <div class="xbox" style="width:130px;height:176px;flex:none"><span class="tag">SLOT 3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+            <div class="stub o" style="width:35%"></div>
+            <div class="stub b" style="width:60%"></div>
+            <div class="stub" style="width:85%"></div>
+            <div style="display:flex;gap:8px"><div class="inp" style="flex:1"></div><div class="btn" style="width:160px;font-size:10px">DOWNLOAD GUIDE</div></div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="stub b" style="width:38%;margin:0 auto"></div>
+          <div style="display:flex;gap:14px;margin-top:4px">
+            <div class="xbox" style="flex:1;height:130px"><span class="tag">VIDEO</span><div class="play"></div></div>
+            <div class="xbox" style="flex:1;height:130px"><span class="tag">VIDEO</span><div class="play"></div></div>
+            <div class="xbox" style="flex:1;height:130px"><span class="tag">VIDEO</span><div class="play"></div></div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <div style="flex:1"><div class="stub" style="width:60%;margin:0 auto"></div></div>
+            <div style="flex:1"><div class="stub" style="width:60%;margin:0 auto"></div></div>
+            <div style="flex:1"><div class="stub" style="width:60%;margin:0 auto"></div></div>
+          </div>
+          <div class="note">TESTIMONIAL VIDEOS — new section, not in brief §5 · client videos to be supplied · poster frames graded to palette</div>
+        </div>
+
+        <div class="sec" style="flex-direction:row;gap:18px">
+          <div class="xbox" style="width:170px;height:196px;flex:none;transform:rotate(-2deg);box-shadow:3px 3px 0 rgba(0,0,0,.12)"><span class="tag">SLOT 2</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+            <div class="stub b" style="width:50%"></div>
+            <div class="stub" style="width:90%"></div>
+            <div class="stub" style="width:75%"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
+              <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+              <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+              <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+              <div style="display:flex;gap:6px;align-items:center"><div class="ic" style="width:18px;height:18px;margin:0"></div><div class="stub" style="flex:1"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec" style="background:#f7f7f7">
+          <div class="stub b" style="width:40%;margin:0 auto"></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px"><div class="inp"></div><div class="inp"></div><div class="inp"></div><div class="inp"></div></div>
+          <div class="btn" style="width:200px;margin:0 auto">BOOK MY CALL</div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#2a2a2a">
+          <span class="wordmark" style="color:#fff;font-size:12px">ATTN<span>!</span></span>
+          <div style="display:flex;gap:8px"><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div><div class="ic" style="width:16px;height:16px;margin:0;border-color:#999"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "annotate <a class="dv-oid" href="#1a">1a</a> with grade notes per section" · "make a desktop variant with the form in the hero" · "wireframe the light (Option-7) twin build"</p>
+</section>
+</x-dc>
+</body>
+</html>
