@@ -158,12 +158,22 @@ export default function Home() {
         <a href="#hero" className="brand">
           ATTN<span>!</span>
         </a>
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#founder">About</a>
           <a href="#services">Services</a>
           <a href="#proof">Results</a>
           <a href="#lead-magnet">Resources</a>
         </nav>
+        <label
+          htmlFor="nav-toggle"
+          className="nav-burger"
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </label>
         <a className="nav-cta" href="#final-cta">
           Book Strategy Call
         </a>

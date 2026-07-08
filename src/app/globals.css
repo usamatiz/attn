@@ -142,6 +142,31 @@ video {
   color: var(--attn-orange);
 }
 
+/* mobile menu toggle — hidden on desktop, shown under 900px */
+.nav-toggle {
+  display: none;
+}
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+
+.nav-burger span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.22s ease, opacity 0.2s ease;
+}
+
 .nav-cta,
 .btn {
   display: inline-flex;
@@ -488,6 +513,7 @@ textarea {
   font-size: 22px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap;
   clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 100%, 0 100%);
 }
 
@@ -495,9 +521,13 @@ textarea {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   align-items: center;
-  gap: 10px;
+  gap: 18px 10px;
+}
+
+.pub {
+  min-width: 0;
 }
 
 .pub {
@@ -1397,75 +1427,263 @@ textarea {
   font-weight: 900;
 }
 
-@media (max-width: 980px) {
+/* ============================================================
+   RESPONSIVE  —  large-tablet → tablet → phone → small phone
+   ============================================================ */
+
+/* ---- large tablet / small laptop ---- */
+@media (max-width: 1120px) {
+  .site-header {
+    padding: 16px 28px;
+  }
+
   .nav-links {
-    display: none;
+    gap: 24px;
+    font-size: 19px;
   }
 
-  .hero-grid,
-  .proof-grid,
-  .lead-grid,
-  .founder-grid,
-  .icon-grid.five,
-  .testimonial-grid,
-  .credential-grid,
-  .two-col,
-  .four-col,
-  .final-row,
-  .download-form {
-    grid-template-columns: 1fr;
+  .nav-cta {
+    margin-left: 24px;
+    font-size: 14px;
   }
 
-  .pubs {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px 10px;
-  }
-
-  .pain-grid,
   .service-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .pain-grid {
-    gap: 32px 0;
-  }
-
-  .brand-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .brand-cell:not(:nth-child(5n))::after {
-    display: none;
-  }
-
-  .brand-cell:nth-child(n + 6)::before {
-    display: none;
-  }
-
-  .pain-card {
-    padding: 0 16px;
+    row-gap: 40px;
   }
 
   .pain-card + .pain-card::before {
     display: none;
   }
 
-  .section {
-    padding: 54px 0;
+}
+
+/* ---- tablet portrait ---- */
+@media (max-width: 900px) {
+  .nav-burger {
+    display: flex;
+    margin-left: auto;
   }
 
-  .form-block,
-  .final-form-wrap {
-    padding: 26px;
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 6px 24px 14px;
+    font-size: 18px;
+    background: rgba(6, 8, 12, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+  }
+
+  .nav-links a {
+    padding: 14px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-toggle:checked ~ .nav-burger span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked ~ .nav-burger span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  .hero-grid,
+  .proof-grid,
+  .lead-grid,
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .lead-grid,
+  .founder-grid {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .lead-copy,
+  .founder-grid > div {
+    text-align: left;
+  }
+
+  .book-cover {
+    max-width: 280px;
+  }
+
+  .founder-photo-wrap {
+    max-width: 320px;
+  }
+
+  .founder-cta {
+    width: 100%;
+    max-width: 420px;
+    align-self: auto;
   }
 
   .annotation-block {
     min-height: 0;
+    text-align: center;
+  }
+
+  .four-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .final-row {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ---- phone ---- */
+@media (max-width: 680px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .pain-grid,
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 14px;
+  }
+
+  .testimonial-grid,
+  .credential-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* shrink wordmarks so single-word logos fit the narrow columns */
+  .featured-frame {
+    padding: 56px 18px 28px;
+  }
+
+  .pub-serif {
+    font-size: 20px;
+  }
+
+  .pub-entre,
+  .pub-ml {
+    font-size: 16px;
+  }
+
+  .pub-inc,
+  .pub-ceo {
+    font-size: 21px;
+  }
+
+  .pub-bi {
+    font-size: 15px;
+  }
+
+  .pub-yahoo {
+    font-size: 19px;
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .brand-cell:not(:nth-child(5n))::after,
+  .brand-cell:nth-child(n + 6)::before {
+    display: none;
+  }
+
+  .pain-card {
+    padding: 0 10px;
+  }
+
+  /* let long headings wrap on small screens */
+  .pain-card h3,
+  .lead-copy h2 {
+    white-space: normal;
+  }
+
+  .form-block,
+  .final-form-wrap {
+    padding: 26px 22px;
+  }
+
+  .two-col,
+  .four-col {
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
+    justify-items: center;
+  }
+}
+
+/* ---- small phone ---- */
+@media (max-width: 480px) {
+  .site-header {
+    padding: 14px 18px;
+  }
+
+  .brand {
+    font-size: 32px;
+  }
+
+  .nav-cta {
+    margin-left: 12px;
+    padding: 0 16px;
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .pain-grid,
+  .service-grid,
+  .testimonial-grid,
+  .credential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .credential-grid .cred {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .founder-btn {
+    font-size: 21px;
+  }
+
+  .hero-submit {
+    font-size: 23px;
   }
 }

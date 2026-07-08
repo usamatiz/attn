@@ -203,4 +203,8 @@ input, select, textarea {
   .form-block, .final-form-wrap { padding: 26px; }
   .annotation-block { min-height: 0; }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .dark-section {
+  background:
+    none,
+}
 }
